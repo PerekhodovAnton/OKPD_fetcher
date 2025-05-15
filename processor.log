@@ -1,0 +1,1521 @@
+2025-05-15 22:01:57 [INFO] app: Starting process with Format 4_1 file: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:01:57 [INFO] FullFormatProcessor: Создана резервная копия исходного файла: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест_original.xlsx
+2025-05-15 22:01:57 [INFO] FullFormatProcessor: Установлено пропуск 4 строк заголовка
+2025-05-15 22:01:57 [INFO] app: Set to skip 4 header rows
+2025-05-15 22:01:57 [INFO] FullFormatProcessor: Начало обработки файла: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:01:57 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Модель инициализирована успешно за 4.2 сек.
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Начало обработки файла формата 4_1: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропускаем первые 4 строк заголовка
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Файл содержит 4 листов: Ф4 МАТ, Пр8 Ф8 ТЗР, Ф4 Прил.4.1, Ф4 Прил.4.2
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Сканирование листа 1/4: 'Ф4 МАТ'
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ' прочитан для анализа, обнаружено 34 строк, 25 столбцов
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на Комплект ЗИП-П  15Щ66.00.10.00' для наименований на листе Ф4 МАТ
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропускаем служебную строку [9]: 'Сырье и основные материалы на  Кабель-заглушку 23УКУ 15Щ66.00.10.10' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропускаем служебную строку [10]: 'Сырье и основные материалы на   Кабель - заглушку Х604 15Щ66.00.10.20' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропускаем служебную строку [18]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропускаем служебную строку [27]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Всего строк на листе: 34
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропущено пустых строк: 14
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Пропущено служебных строк: 9
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Собрано элементов: 7
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Найдено 7 элементов на листе 'Ф4 МАТ'
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Сканирование листа 2/4: 'Пр8 Ф8 ТЗР'
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:02:02 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР' прочитан для анализа, обнаружено 11 строк, 25 столбцов
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Используем колонку 'Unnamed: 0' для наименований на листе Пр8 Ф8 ТЗР
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Всего строк на листе: 11
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропущено пустых строк: 6
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропущено служебных строк: 0
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Собрано элементов: 1
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдено 1 элементов на листе 'Пр8 Ф8 ТЗР'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Сканирование листа 3/4: 'Ф4 Прил.4.1'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1' прочитан для анализа, обнаружено 39 строк, 25 столбцов
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель-заглушку 23УКУ 15Щ66.00.10.10' для наименований на листе Ф4 Прил.4.1
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [22]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [23]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [24]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Всего строк на листе: 39
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропущено пустых строк: 15
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Собрано элементов: 13
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдено 13 элементов на листе 'Ф4 Прил.4.1'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Сканирование листа 4/4: 'Ф4 Прил.4.2'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2' прочитан для анализа, обнаружено 45 строк, 25 столбцов
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель - заглушку Х604 15Щ66.00.10.20' для наименований на листе Ф4 Прил.4.2
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [20]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [30]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [31]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропускаем служебную строку [32]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Всего строк на листе: 45
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропущено пустых строк: 24
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Собрано элементов: 10
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдено 10 элементов на листе 'Ф4 Прил.4.2'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Всего найдено 31 элементов на всех листах
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Уникальных элементов: 24
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Группируем похожие элементы...
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Модель инициализирована успешно за 0.4 сек.
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Сгруппировано в 18 групп
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 1/18: Кабель заглушка
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 1: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 2/18: Винт ГОСТ
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 2: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 3/18: Гвоздь
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 3: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 4/18: Пруток
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 4: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 5/18: Провод МГШВ
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 5: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 6/18: Эмаль
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 6: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 7/18: Кабель заглушка УКУ
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 7: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 8/18: Герметик Виксинт
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 8: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 9/18: Гайка мебельная забивная DIN
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 9: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 10/18: Припой ПОС
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 10: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 11/18: Гвозди проф для нейлера особотвердые тип ЗУБР
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 11: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 12/18: Леска капроновая рыболовн
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 12: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 13/18: Стеклотекстолит
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 13: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 14/18: Круг
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 14: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 15/18: Лак
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 15: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 16/18: Трубка
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 16: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 17/18: Флюс ЛТИ
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 17: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Обработка группы 18/18: 
+2025-05-15 22:02:03 [ERROR] FullFormatProcessor: Ошибка при обработке группы 18: 'temperature'
+Traceback (most recent call last):
+  File "/app/processors/full_format_processor.py", line 345, in _process_file
+    simplified = self.model.generate(prompt)['content']
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/model.py", line 80, in generate
+    gen_params = {
+                 ^
+  File "/app/src/model.py", line 81, in <dictcomp>
+    key: (locals()[key] if locals()[key] is not None else self.defaults[key])
+                           ~~~~~~~~^^^^^
+KeyError: 'temperature'
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Определены коды ОКПД для 0 уникальных элементов
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Увеличение ширины колонки с кодами ОКПД на всех листах
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ': ширина колонки D изменена с 5.7 на 17.1
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР': ширина колонки D изменена с 7.2 на 21.6
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1': ширина колонки D изменена с 7.3 на 21.9
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/2558f2ca60a2760b62236dd1632227d9c55da533f2f97ffe6357bdf20e748be3/тест_тест.xlsx
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2': ширина колонки D изменена с 7.3 на 21.9
+2025-05-15 22:02:03 [INFO] FullFormatProcessor: Ширина колонок с кодами ОКПД успешно увеличена на всех листах
+2025-05-15 22:02:04 [INFO] FullFormatProcessor: Файл успешно обновлен, проставлено 0 кодов ОКПД
+2025-05-15 22:02:04 [INFO] FullFormatProcessor: Копия результата сохранена в /tmp/tmpwkb6e_ht.xlsx
+2025-05-15 22:02:04 [INFO] FullFormatProcessor: Обработка завершена за 6.4 сек. Результат сохранен в /tmp/tmpwkb6e_ht.xlsx
+2025-05-15 22:04:34 [INFO] app: Starting process with Format 4_1 file: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:34 [INFO] FullFormatProcessor: Создана резервная копия исходного файла: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест_original.xlsx
+2025-05-15 22:04:34 [INFO] FullFormatProcessor: Установлено пропуск 4 строк заголовка
+2025-05-15 22:04:34 [INFO] app: Set to skip 4 header rows
+2025-05-15 22:04:34 [INFO] FullFormatProcessor: Начало обработки файла: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:34 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Модель инициализирована успешно за 4.9 сек.
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Начало обработки файла формата 4_1: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропускаем первые 4 строк заголовка
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Файл содержит 4 листов: Ф4 МАТ, Пр8 Ф8 ТЗР, Ф4 Прил.4.1, Ф4 Прил.4.2
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Сканирование листа 1/4: 'Ф4 МАТ'
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ' прочитан для анализа, обнаружено 34 строк, 25 столбцов
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на Комплект ЗИП-П  15Щ66.00.10.00' для наименований на листе Ф4 МАТ
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропускаем служебную строку [9]: 'Сырье и основные материалы на  Кабель-заглушку 23УКУ 15Щ66.00.10.10' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропускаем служебную строку [10]: 'Сырье и основные материалы на   Кабель - заглушку Х604 15Щ66.00.10.20' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропускаем служебную строку [18]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропускаем служебную строку [27]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Всего строк на листе: 34
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропущено пустых строк: 14
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропущено служебных строк: 9
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Собрано элементов: 7
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдено 7 элементов на листе 'Ф4 МАТ'
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Сканирование листа 2/4: 'Пр8 Ф8 ТЗР'
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР' прочитан для анализа, обнаружено 11 строк, 25 столбцов
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Используем колонку 'Unnamed: 0' для наименований на листе Пр8 Ф8 ТЗР
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Всего строк на листе: 11
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропущено пустых строк: 6
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Пропущено служебных строк: 0
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Собрано элементов: 1
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдено 1 элементов на листе 'Пр8 Ф8 ТЗР'
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Сканирование листа 3/4: 'Ф4 Прил.4.1'
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:04:39 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1' прочитан для анализа, обнаружено 39 строк, 25 столбцов
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель-заглушку 23УКУ 15Щ66.00.10.10' для наименований на листе Ф4 Прил.4.1
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [22]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [23]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [24]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Всего строк на листе: 39
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропущено пустых строк: 15
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Собрано элементов: 13
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Найдено 13 элементов на листе 'Ф4 Прил.4.1'
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Сканирование листа 4/4: 'Ф4 Прил.4.2'
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2' прочитан для анализа, обнаружено 45 строк, 25 столбцов
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель - заглушку Х604 15Щ66.00.10.20' для наименований на листе Ф4 Прил.4.2
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [20]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [30]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [31]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропускаем служебную строку [32]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Всего строк на листе: 45
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропущено пустых строк: 24
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Собрано элементов: 10
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Найдено 10 элементов на листе 'Ф4 Прил.4.2'
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Всего найдено 31 элементов на всех листах
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Уникальных элементов: 24
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Группируем похожие элементы...
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Модель инициализирована успешно за 0.5 сек.
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Сгруппировано в 18 групп
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Обработка группы 1/18: Винт ГОСТ
+2025-05-15 22:04:40 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 2/18: Трубка
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 3/18: Стеклотекстолит
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 4/18: Кабель заглушка
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 5/18: Леска капроновая рыболовн
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 6/18: Пруток
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 7/18: Эмаль
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 8/18: Гвозди проф для нейлера особотвердые тип ЗУБР
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 9/18: Гвоздь
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 10/18: Гайка DIN гост
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 11/18: Припой ПОС
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 12/18: Провод МГШВ
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 13/18: Кабель заглушка УКУ
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 14/18: 
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 15/18: Флюс ЛТИ
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 16/18: Герметик Виксинт
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 17/18: Круг
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка группы 18/18: Лак
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Определены коды ОКПД для 24 уникальных элементов
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновление листа 'Ф4 МАТ': 7 элементов
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 МАТ': наименование(3), код(4)
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(13, 4): '-' -> '32.99.59.000' для 'Винт М4х14 ГОСТ 17475-80'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(14, 4): '-' -> '32.99.59.000' для 'Винт М4х18 ГОСТ 17475-80'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(15, 4): '-' -> '32.99.59.000' для 'Винт М4х22 ГОСТ 17475-80'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(16, 4): '-' -> '32.99.59.000' для 'Гвозди проф для нейлера особотвердые тип 300 30 мм 5000 шт 31830-30 ЗУБР'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(17, 4): '-' -> '32.99.59.000' для 'Гайка 4 DIN 934 (гост 5915-70)'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлено 7 ячеек на листе 'Ф4 МАТ'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновление листа 'Пр8 Ф8 ТЗР': 1 элементов
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдены колонки на листе 'Пр8 Ф8 ТЗР': наименование(1), код(4)
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Ожидаемый текст '1.', фактический '1. ' в строке 8
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Пр8 Ф8 ТЗР:(8, 4): 'Затраты отсутствуют' -> '32.99.59.000' для '1. '
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлено 1 ячеек на листе 'Пр8 Ф8 ТЗР'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновление листа 'Ф4 Прил.4.1': 13 элементов
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 Прил.4.1': наименование(3), код(4)
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(11, 4): 'None' -> '32.99.59.000' для 'Кабель-заглушка 23УКУ 15Щ66.00.10.10'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(12, 4): '-' -> '32.99.59.000' для 'Герметик Виксинт У-1-18'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(13, 4): '-' -> '32.99.59.000' для 'Круг Д16Т  40 мм'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(14, 4): '-' -> '32.99.59.000' для 'Припой ПОС 61'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(15, 4): '-' -> '32.99.59.000' для 'Провод МГШВ 1  0,2'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлено 13 ячеек на листе 'Ф4 Прил.4.1'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновление листа 'Ф4 Прил.4.2': 10 элементов
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 Прил.4.2': наименование(3), код(4)
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Ожидаемый текст 'Кабель - заглушка Х604 15Щ66.00.10.20', фактический ' Кабель - заглушка Х604 15Щ66.00.10.20' в строке 11
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(11, 4): '-' -> '32.99.59.000' для ' Кабель - заглушка Х604 15Щ66.00.10.20'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(12, 4): '-' -> '32.99.59.000' для 'Пруток Д16Т  95 мм'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(13, 4): '-' -> '32.99.59.000' для 'Припой ПОС 61'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(14, 4): '-' -> '32.99.59.000' для 'Провод МГШВ 1 0,2'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(15, 4): '-' -> '32.99.59.000' для 'Трубка ТВ - 40  2,0 мм'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обновлено 10 ячеек на листе 'Ф4 Прил.4.2'
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Увеличение ширины колонки с кодами ОКПД на всех листах
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ': ширина колонки D изменена с 5.7 на 17.1
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР': ширина колонки D изменена с 7.2 на 21.6
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1': ширина колонки D изменена с 7.3 на 21.9
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2': ширина колонки D изменена с 7.3 на 21.9
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Ширина колонок с кодами ОКПД успешно увеличена на всех листах
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Файл успешно обновлен, проставлено 31 кодов ОКПД
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Копия результата сохранена в /tmp/tmpgs1v8t84.xlsx
+2025-05-15 22:04:41 [INFO] FullFormatProcessor: Обработка завершена за 7.8 сек. Результат сохранен в /tmp/tmpgs1v8t84.xlsx
+2025-05-15 22:05:58 [INFO] app: Starting process with Format 4_1 file: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:05:58 [INFO] FullFormatProcessor: Установлено пропуск 5 строк заголовка
+2025-05-15 22:05:58 [INFO] app: Set to skip 5 header rows
+2025-05-15 22:05:58 [INFO] FullFormatProcessor: Начало обработки файла: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:05:58 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 22:05:58 [INFO] FullFormatProcessor: Модель инициализирована успешно за 0.7 сек.
+2025-05-15 22:05:58 [INFO] FullFormatProcessor: Начало обработки файла формата 4_1: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:05:58 [INFO] FullFormatProcessor: Пропускаем первые 5 строк заголовка
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Файл содержит 4 листов: Ф4 МАТ, Пр8 Ф8 ТЗР, Ф4 Прил.4.1, Ф4 Прил.4.2
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Сканирование листа 1/4: 'Ф4 МАТ'
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ' прочитан для анализа, обнаружено 34 строк, 25 столбцов
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на Комплект ЗИП-П  15Щ66.00.10.00' для наименований на листе Ф4 МАТ
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [9]: 'Сырье и основные материалы на  Кабель-заглушку 23УКУ 15Щ66.00.10.10' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [10]: 'Сырье и основные материалы на   Кабель - заглушку Х604 15Щ66.00.10.20' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [18]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [27]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Всего строк на листе: 34
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено пустых строк: 13
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено служебных строк: 9
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Собрано элементов: 7
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдено 7 элементов на листе 'Ф4 МАТ'
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Сканирование листа 2/4: 'Пр8 Ф8 ТЗР'
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР' прочитан для анализа, обнаружено 11 строк, 25 столбцов
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Используем колонку 'Unnamed: 0' для наименований на листе Пр8 Ф8 ТЗР
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Всего строк на листе: 11
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено пустых строк: 5
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено служебных строк: 0
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Собрано элементов: 1
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдено 1 элементов на листе 'Пр8 Ф8 ТЗР'
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Сканирование листа 3/4: 'Ф4 Прил.4.1'
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1' прочитан для анализа, обнаружено 39 строк, 25 столбцов
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель-заглушку 23УКУ 15Щ66.00.10.10' для наименований на листе Ф4 Прил.4.1
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [22]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [23]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [24]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Всего строк на листе: 39
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено пустых строк: 14
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Собрано элементов: 13
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдено 13 элементов на листе 'Ф4 Прил.4.1'
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Сканирование листа 4/4: 'Ф4 Прил.4.2'
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2' прочитан для анализа, обнаружено 45 строк, 25 столбцов
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель - заглушку Х604 15Щ66.00.10.20' для наименований на листе Ф4 Прил.4.2
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [20]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [30]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [31]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропускаем служебную строку [32]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Всего строк на листе: 45
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено пустых строк: 23
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Собрано элементов: 10
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Найдено 10 элементов на листе 'Ф4 Прил.4.2'
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Всего найдено 31 элементов на всех листах
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Уникальных элементов: 24
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Группируем похожие элементы...
+2025-05-15 22:05:59 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Модель инициализирована успешно за 0.5 сек.
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Сгруппировано в 18 групп
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 1/18: Трубка
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 2/18: Эмаль
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 3/18: Гвозди проф для нейлера особотвердые тип ЗУБР
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 4/18: Припой ПОС
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 5/18: Кабель заглушка
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 6/18: Стеклотекстолит
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 7/18: Круг
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 8/18: Гайка DIN гост
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 9/18: Леска капроновая рыболовн
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 10/18: Кабель заглушка УКУ
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Обработка группы 11/18: Провод МГШВ
+2025-05-15 22:06:00 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обработка группы 12/18: Пруток
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обработка группы 13/18: Герметик Виксинт
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обработка группы 14/18: Винт ГОСТ
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обработка группы 15/18: Лак
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обработка группы 16/18: Флюс ЛТИ
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обработка группы 17/18: Гвоздь
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обработка группы 18/18: 
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Определены коды ОКПД для 24 уникальных элементов
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновление листа 'Ф4 МАТ': 7 элементов
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 МАТ': наименование(3), код(4)
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(13, 4): '-' -> '32.99.59.000' для 'Винт М4х14 ГОСТ 17475-80'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(14, 4): '-' -> '32.99.59.000' для 'Винт М4х18 ГОСТ 17475-80'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(15, 4): '-' -> '32.99.59.000' для 'Винт М4х22 ГОСТ 17475-80'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(16, 4): '-' -> '32.99.59.000' для 'Гвозди проф для нейлера особотвердые тип 300 30 мм 5000 шт 31830-30 ЗУБР'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(17, 4): '-' -> '32.99.59.000' для 'Гайка 4 DIN 934 (гост 5915-70)'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлено 7 ячеек на листе 'Ф4 МАТ'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновление листа 'Пр8 Ф8 ТЗР': 1 элементов
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдены колонки на листе 'Пр8 Ф8 ТЗР': наименование(1), код(4)
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Ожидаемый текст '1.', фактический '1. ' в строке 8
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Пр8 Ф8 ТЗР:(8, 4): 'Затраты отсутствуют' -> '32.99.59.000' для '1. '
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлено 1 ячеек на листе 'Пр8 Ф8 ТЗР'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновление листа 'Ф4 Прил.4.1': 13 элементов
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 Прил.4.1': наименование(3), код(4)
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(11, 4): 'None' -> '32.99.59.000' для 'Кабель-заглушка 23УКУ 15Щ66.00.10.10'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(12, 4): '-' -> '32.99.59.000' для 'Герметик Виксинт У-1-18'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(13, 4): '-' -> '32.99.59.000' для 'Круг Д16Т  40 мм'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(14, 4): '-' -> '32.99.59.000' для 'Припой ПОС 61'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(15, 4): '-' -> '32.99.59.000' для 'Провод МГШВ 1  0,2'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлено 13 ячеек на листе 'Ф4 Прил.4.1'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновление листа 'Ф4 Прил.4.2': 10 элементов
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 Прил.4.2': наименование(3), код(4)
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Ожидаемый текст 'Кабель - заглушка Х604 15Щ66.00.10.20', фактический ' Кабель - заглушка Х604 15Щ66.00.10.20' в строке 11
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(11, 4): '-' -> '32.99.59.000' для ' Кабель - заглушка Х604 15Щ66.00.10.20'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(12, 4): '-' -> '32.99.59.000' для 'Пруток Д16Т  95 мм'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(13, 4): '-' -> '32.99.59.000' для 'Припой ПОС 61'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(14, 4): '-' -> '32.99.59.000' для 'Провод МГШВ 1 0,2'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(15, 4): '-' -> '32.99.59.000' для 'Трубка ТВ - 40  2,0 мм'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Обновлено 10 ячеек на листе 'Ф4 Прил.4.2'
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Увеличение ширины колонки с кодами ОКПД на всех листах
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ': ширина колонки D изменена с 5.7 на 17.1
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР': ширина колонки D изменена с 7.2 на 21.6
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1': ширина колонки D изменена с 7.3 на 21.9
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/aa23873fd9f9868673b6bd58e28ed9871674e4c0a2ac64d5df7c15173540455e/тест_тест.xlsx
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2': ширина колонки D изменена с 7.3 на 21.9
+2025-05-15 22:06:07 [INFO] FullFormatProcessor: Ширина колонок с кодами ОКПД успешно увеличена на всех листах
+2025-05-15 22:06:08 [INFO] FullFormatProcessor: Файл успешно обновлен, проставлено 31 кодов ОКПД
+2025-05-15 22:06:08 [INFO] FullFormatProcessor: Копия результата сохранена в /tmp/tmpo_o_mk4p.xlsx
+2025-05-15 22:06:08 [INFO] FullFormatProcessor: Обработка завершена за 10.0 сек. Результат сохранен в /tmp/tmpo_o_mk4p.xlsx
+2025-05-15 22:18:49 [INFO] app: Starting process with Format 4_1 file: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:49 [INFO] FullFormatProcessor: Создана резервная копия исходного файла: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест_original.xlsx
+2025-05-15 22:18:49 [INFO] FullFormatProcessor: Установлено пропуск 4 строк заголовка
+2025-05-15 22:18:49 [INFO] app: Set to skip 4 header rows
+2025-05-15 22:18:49 [INFO] FullFormatProcessor: Начало обработки файла: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:49 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 22:18:53 [INFO] FullFormatProcessor: Модель инициализирована успешно за 4.0 сек.
+2025-05-15 22:18:53 [INFO] FullFormatProcessor: Начало обработки файла формата 4_1: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:53 [INFO] FullFormatProcessor: Пропускаем первые 4 строк заголовка
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Файл содержит 4 листов: Ф4 МАТ, Пр8 Ф8 ТЗР, Ф4 Прил.4.1, Ф4 Прил.4.2
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Сканирование листа 1/4: 'Ф4 МАТ'
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ' прочитан для анализа, обнаружено 34 строк, 25 столбцов
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на Комплект ЗИП-П  15Щ66.00.10.00' для наименований на листе Ф4 МАТ
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [9]: 'Сырье и основные материалы на  Кабель-заглушку 23УКУ 15Щ66.00.10.10' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [10]: 'Сырье и основные материалы на   Кабель - заглушку Х604 15Щ66.00.10.20' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [18]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [27]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Всего строк на листе: 34
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено пустых строк: 14
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено служебных строк: 9
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Собрано элементов: 7
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдено 7 элементов на листе 'Ф4 МАТ'
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Сканирование листа 2/4: 'Пр8 Ф8 ТЗР'
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР' прочитан для анализа, обнаружено 11 строк, 25 столбцов
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Используем колонку 'Unnamed: 0' для наименований на листе Пр8 Ф8 ТЗР
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Всего строк на листе: 11
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено пустых строк: 6
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено служебных строк: 0
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Собрано элементов: 1
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдено 1 элементов на листе 'Пр8 Ф8 ТЗР'
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Сканирование листа 3/4: 'Ф4 Прил.4.1'
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1' прочитан для анализа, обнаружено 39 строк, 25 столбцов
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель-заглушку 23УКУ 15Щ66.00.10.10' для наименований на листе Ф4 Прил.4.1
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [22]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [23]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [24]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Всего строк на листе: 39
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено пустых строк: 15
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Собрано элементов: 13
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдено 13 элементов на листе 'Ф4 Прил.4.1'
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Сканирование листа 4/4: 'Ф4 Прил.4.2'
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2' прочитан для анализа, обнаружено 45 строк, 25 столбцов
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель - заглушку Х604 15Щ66.00.10.20' для наименований на листе Ф4 Прил.4.2
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [20]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [30]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [31]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропускаем служебную строку [32]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Всего строк на листе: 45
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено строк заголовка: 4
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено пустых строк: 24
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Собрано элементов: 10
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Найдено 10 элементов на листе 'Ф4 Прил.4.2'
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Всего найдено 31 элементов на всех листах
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Уникальных элементов: 24
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Группируем похожие элементы...
+2025-05-15 22:18:55 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Модель инициализирована успешно за 0.7 сек.
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Сгруппировано в 18 групп
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 1/18: Трубка
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 2/18: Винт ГОСТ
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 3/18: Провод МГШВ
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 4/18: Герметик Виксинт
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 5/18: 
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 6/18: Флюс ЛТИ
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 7/18: Эмаль
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 8/18: Лак
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 9/18: Припой ПОС
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 10/18: Кабель заглушка УКУ
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 11/18: Пруток
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 12/18: Круг
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 13/18: Гвоздь
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 14/18: Кабель заглушка
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 15/18: Стеклотекстолит
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 16/18: Гайка мебельная забивная DIN
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 17/18: Гвозди проф для нейлера особотвердые тип ЗУБР
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обработка группы 18/18: Леска капроновая рыболовн
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Определены коды ОКПД для 24 уникальных элементов
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновление листа 'Ф4 МАТ': 7 элементов
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 МАТ': наименование(3), код(4)
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(13, 4): '-' -> '32.99.59.000' для 'Винт М4х14 ГОСТ 17475-80'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(14, 4): '-' -> '32.99.59.000' для 'Винт М4х18 ГОСТ 17475-80'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(15, 4): '-' -> '32.99.59.000' для 'Винт М4х22 ГОСТ 17475-80'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(16, 4): '-' -> '32.99.59.000' для 'Гвозди проф для нейлера особотвердые тип 300 30 мм 5000 шт 31830-30 ЗУБР'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(17, 4): '-' -> '32.99.59.000' для 'Гайка 4 DIN 934 (гост 5915-70)'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлено 7 ячеек на листе 'Ф4 МАТ'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновление листа 'Пр8 Ф8 ТЗР': 1 элементов
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдены колонки на листе 'Пр8 Ф8 ТЗР': наименование(1), код(4)
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Ожидаемый текст '1.', фактический '1. ' в строке 8
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Пр8 Ф8 ТЗР:(8, 4): 'Затраты отсутствуют' -> '32.99.59.000' для '1. '
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлено 1 ячеек на листе 'Пр8 Ф8 ТЗР'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновление листа 'Ф4 Прил.4.1': 13 элементов
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 Прил.4.1': наименование(3), код(4)
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(11, 4): 'None' -> '32.99.59.000' для 'Кабель-заглушка 23УКУ 15Щ66.00.10.10'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(12, 4): '-' -> '32.99.59.000' для 'Герметик Виксинт У-1-18'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(13, 4): '-' -> '32.99.59.000' для 'Круг Д16Т  40 мм'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(14, 4): '-' -> '32.99.59.000' для 'Припой ПОС 61'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(15, 4): '-' -> '32.99.59.000' для 'Провод МГШВ 1  0,2'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлено 13 ячеек на листе 'Ф4 Прил.4.1'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновление листа 'Ф4 Прил.4.2': 10 элементов
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 Прил.4.2': наименование(3), код(4)
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Ожидаемый текст 'Кабель - заглушка Х604 15Щ66.00.10.20', фактический ' Кабель - заглушка Х604 15Щ66.00.10.20' в строке 11
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(11, 4): '-' -> '32.99.59.000' для ' Кабель - заглушка Х604 15Щ66.00.10.20'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(12, 4): '-' -> '32.99.59.000' для 'Пруток Д16Т  95 мм'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(13, 4): '-' -> '32.99.59.000' для 'Припой ПОС 61'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(14, 4): '-' -> '32.99.59.000' для 'Провод МГШВ 1 0,2'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(15, 4): '-' -> '32.99.59.000' для 'Трубка ТВ - 40  2,0 мм'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Обновлено 10 ячеек на листе 'Ф4 Прил.4.2'
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Увеличение ширины колонки с кодами ОКПД на всех листах
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ': ширина колонки D изменена с 5.7 на 17.1
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР': ширина колонки D изменена с 7.2 на 21.6
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1': ширина колонки D изменена с 7.3 на 21.9
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/f2664c30fffbcf76e6b6e74936a40a504b3fdcc8685e578d09e9973fd56fa3ab/тест_тест.xlsx
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2': ширина колонки D изменена с 7.3 на 21.9
+2025-05-15 22:18:56 [INFO] FullFormatProcessor: Ширина колонок с кодами ОКПД успешно увеличена на всех листах
+2025-05-15 22:18:57 [INFO] FullFormatProcessor: Файл успешно обновлен, проставлено 31 кодов ОКПД
+2025-05-15 22:18:57 [INFO] FullFormatProcessor: Копия результата сохранена в /tmp/tmp7eqfoux8.xlsx
+2025-05-15 22:18:57 [INFO] FullFormatProcessor: Обработка завершена за 7.3 сек. Результат сохранен в /tmp/tmp7eqfoux8.xlsx
+2025-05-15 19:23:01 [INFO] app: Starting process with Format 4_1 file: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:02 [INFO] FullFormatProcessor: Создана резервная копия исходного файла: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест_original.xlsx
+2025-05-15 19:23:02 [INFO] FullFormatProcessor: Установлено пропуск 5 строк заголовка
+2025-05-15 19:23:02 [INFO] app: Set to skip 5 header rows
+2025-05-15 19:23:02 [INFO] FullFormatProcessor: Начало обработки файла: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:02 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 19:23:06 [INFO] FullFormatProcessor: Модель инициализирована успешно за 4.7 сек.
+2025-05-15 19:23:06 [INFO] FullFormatProcessor: Начало обработки файла формата 4_1: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:06 [INFO] FullFormatProcessor: Пропускаем первые 5 строк заголовка
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Файл содержит 4 листов: Ф4 МАТ, Пр8 Ф8 ТЗР, Ф4 Прил.4.1, Ф4 Прил.4.2
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Сканирование листа 1/4: 'Ф4 МАТ'
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ' прочитан для анализа, обнаружено 34 строк, 25 столбцов
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на Комплект ЗИП-П  15Щ66.00.10.00' для наименований на листе Ф4 МАТ
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [9]: 'Сырье и основные материалы на  Кабель-заглушку 23УКУ 15Щ66.00.10.10' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [10]: 'Сырье и основные материалы на   Кабель - заглушку Х604 15Щ66.00.10.20' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [18]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [27]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Всего строк на листе: 34
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропущено пустых строк: 13
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропущено служебных строк: 9
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Собрано элементов: 7
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдено 7 элементов на листе 'Ф4 МАТ'
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Сканирование листа 2/4: 'Пр8 Ф8 ТЗР'
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР' прочитан для анализа, обнаружено 11 строк, 25 столбцов
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Используем колонку 'Unnamed: 0' для наименований на листе Пр8 Ф8 ТЗР
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Всего строк на листе: 11
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропущено пустых строк: 5
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропущено служебных строк: 0
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Собрано элементов: 1
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдено 1 элементов на листе 'Пр8 Ф8 ТЗР'
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Сканирование листа 3/4: 'Ф4 Прил.4.1'
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1' прочитан для анализа, обнаружено 39 строк, 25 столбцов
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель-заглушку 23УКУ 15Щ66.00.10.10' для наименований на листе Ф4 Прил.4.1
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [22]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [23]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [24]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Всего строк на листе: 39
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропущено пустых строк: 14
+2025-05-15 19:23:07 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Собрано элементов: 13
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Найдено 13 элементов на листе 'Ф4 Прил.4.1'
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Сканирование листа 4/4: 'Ф4 Прил.4.2'
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2' прочитан для анализа, обнаружено 45 строк, 25 столбцов
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель - заглушку Х604 15Щ66.00.10.20' для наименований на листе Ф4 Прил.4.2
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Пропускаем служебную строку [20]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Пропускаем служебную строку [30]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Пропускаем служебную строку [31]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Пропускаем служебную строку [32]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Всего строк на листе: 45
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Пропущено пустых строк: 23
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Собрано элементов: 10
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Найдено 10 элементов на листе 'Ф4 Прил.4.2'
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Всего найдено 31 элементов на всех листах
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Уникальных элементов: 24
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Группируем похожие элементы...
+2025-05-15 19:23:08 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Модель инициализирована успешно за 2.4 сек.
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Сгруппировано в 18 групп
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 1/18: Лак
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 2/18: Винт ГОСТ
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 3/18: Эмаль
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 4/18: 
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 5/18: Кабель заглушка
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 6/18: Трубка
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 7/18: Провод МГШВ
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 8/18: Гайка мебельная забивная DIN
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 9/18: Круг
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 10/18: Гвоздь
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 11/18: Припой ПОС
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 12/18: Пруток
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 13/18: Кабель заглушка УКУ
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 14/18: Стеклотекстолит
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 15/18: Герметик Виксинт
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 16/18: Гвозди проф для нейлера особотвердые тип ЗУБР
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 17/18: Леска капроновая рыболовн
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обработка группы 18/18: Флюс ЛТИ
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Упрощено до: Default OKPD code: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Определены коды ОКПД для 24 уникальных элементов
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновление листа 'Ф4 МАТ': 7 элементов
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 МАТ': наименование(3), код(4)
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(13, 4): '-' -> '32.99.59.000' для 'Винт М4х14 ГОСТ 17475-80'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(14, 4): '-' -> '32.99.59.000' для 'Винт М4х18 ГОСТ 17475-80'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(15, 4): '-' -> '32.99.59.000' для 'Винт М4х22 ГОСТ 17475-80'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(16, 4): '-' -> '32.99.59.000' для 'Гвозди проф для нейлера особотвердые тип 300 30 мм 5000 шт 31830-30 ЗУБР'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 МАТ:(17, 4): '-' -> '32.99.59.000' для 'Гайка 4 DIN 934 (гост 5915-70)'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлено 7 ячеек на листе 'Ф4 МАТ'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновление листа 'Пр8 Ф8 ТЗР': 1 элементов
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдены колонки на листе 'Пр8 Ф8 ТЗР': наименование(1), код(4)
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Ожидаемый текст '1.', фактический '1. ' в строке 8
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Пр8 Ф8 ТЗР:(8, 4): 'Затраты отсутствуют' -> '32.99.59.000' для '1. '
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлено 1 ячеек на листе 'Пр8 Ф8 ТЗР'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновление листа 'Ф4 Прил.4.1': 13 элементов
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 Прил.4.1': наименование(3), код(4)
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(11, 4): 'None' -> '32.99.59.000' для 'Кабель-заглушка 23УКУ 15Щ66.00.10.10'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(12, 4): '-' -> '32.99.59.000' для 'Герметик Виксинт У-1-18'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(13, 4): '-' -> '32.99.59.000' для 'Круг Д16Т  40 мм'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(14, 4): '-' -> '32.99.59.000' для 'Припой ПОС 61'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.1:(15, 4): '-' -> '32.99.59.000' для 'Провод МГШВ 1  0,2'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлено 13 ячеек на листе 'Ф4 Прил.4.1'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновление листа 'Ф4 Прил.4.2': 10 элементов
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдены колонки на листе 'Ф4 Прил.4.2': наименование(3), код(4)
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Ожидаемый текст 'Кабель - заглушка Х604 15Щ66.00.10.20', фактический ' Кабель - заглушка Х604 15Щ66.00.10.20' в строке 11
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(11, 4): '-' -> '32.99.59.000' для ' Кабель - заглушка Х604 15Щ66.00.10.20'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(12, 4): '-' -> '32.99.59.000' для 'Пруток Д16Т  95 мм'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(13, 4): '-' -> '32.99.59.000' для 'Припой ПОС 61'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(14, 4): '-' -> '32.99.59.000' для 'Провод МГШВ 1 0,2'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлена ячейка Ф4 Прил.4.2:(15, 4): '-' -> '32.99.59.000' для 'Трубка ТВ - 40  2,0 мм'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Обновлено 10 ячеек на листе 'Ф4 Прил.4.2'
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Увеличение ширины колонки с кодами ОКПД на всех листах
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ': ширина колонки D изменена с 5.7 на 17.1
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР': ширина колонки D изменена с 7.2 на 21.6
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1': ширина колонки D изменена с 7.3 на 21.9
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/a9de079357b49ba796bb34bc414d74b88567821d4312698e0829698cf12495e1/тест_тест.xlsx
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2': ширина колонки D изменена с 7.3 на 21.9
+2025-05-15 19:23:10 [INFO] FullFormatProcessor: Ширина колонок с кодами ОКПД успешно увеличена на всех листах
+2025-05-15 19:23:11 [INFO] FullFormatProcessor: Файл успешно обновлен, проставлено 31 кодов ОКПД
+2025-05-15 19:23:11 [INFO] FullFormatProcessor: Копия результата сохранена в /tmp/tmpexnznh78.xlsx
+2025-05-15 19:23:11 [INFO] FullFormatProcessor: Обработка завершена за 9.1 сек. Результат сохранен в /tmp/tmpexnznh78.xlsx
+2025-05-15 19:37:03 [INFO] app: Starting process with Format 4_1 file: /tmp/gradio/315ef6caebe7b3d53d38e22ce711940da85c9a1b2a125e4ec0b4e46f797a9b35/тест_тест.xlsx
+2025-05-15 19:37:03 [INFO] FullFormatProcessor: Создана резервная копия исходного файла: /tmp/gradio/315ef6caebe7b3d53d38e22ce711940da85c9a1b2a125e4ec0b4e46f797a9b35/тест_тест_original.xlsx
+2025-05-15 19:37:03 [INFO] FullFormatProcessor: Установлено пропуск 5 строк заголовка
+2025-05-15 19:37:03 [INFO] app: Set to skip 5 header rows
+2025-05-15 19:37:03 [INFO] FullFormatProcessor: Начало обработки файла: /tmp/gradio/315ef6caebe7b3d53d38e22ce711940da85c9a1b2a125e4ec0b4e46f797a9b35/тест_тест.xlsx
+2025-05-15 19:37:03 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 19:39:37 [INFO] FullFormatProcessor: Модель инициализирована успешно за 153.5 сек.
+2025-05-15 19:39:37 [INFO] FullFormatProcessor: Начало обработки файла формата 4_1: /tmp/gradio/315ef6caebe7b3d53d38e22ce711940da85c9a1b2a125e4ec0b4e46f797a9b35/тест_тест.xlsx
+2025-05-15 19:39:37 [INFO] FullFormatProcessor: Пропускаем первые 5 строк заголовка
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Файл содержит 4 листов: Ф4 МАТ, Пр8 Ф8 ТЗР, Ф4 Прил.4.1, Ф4 Прил.4.2
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Сканирование листа 1/4: 'Ф4 МАТ'
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/315ef6caebe7b3d53d38e22ce711940da85c9a1b2a125e4ec0b4e46f797a9b35/тест_тест.xlsx
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Анализируем лист: Ф4 МАТ
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Лист 'Ф4 МАТ' прочитан для анализа, обнаружено 34 строк, 25 столбцов
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на Комплект ЗИП-П  15Щ66.00.10.00' для наименований на листе Ф4 МАТ
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропускаем служебную строку [9]: 'Сырье и основные материалы на  Кабель-заглушку 23УКУ 15Щ66.00.10.10' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропускаем служебную строку [10]: 'Сырье и основные материалы на   Кабель - заглушку Х604 15Щ66.00.10.20' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропускаем служебную строку [18]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропускаем служебную строку [27]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Всего строк на листе: 34
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропущено пустых строк: 13
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Пропущено служебных строк: 9
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Собрано элементов: 7
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Найдено 7 элементов на листе 'Ф4 МАТ'
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Сканирование листа 2/4: 'Пр8 Ф8 ТЗР'
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/315ef6caebe7b3d53d38e22ce711940da85c9a1b2a125e4ec0b4e46f797a9b35/тест_тест.xlsx
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Анализируем лист: Пр8 Ф8 ТЗР
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 1
+2025-05-15 19:39:41 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Лист 'Пр8 Ф8 ТЗР' прочитан для анализа, обнаружено 11 строк, 25 столбцов
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Используем колонку 'Unnamed: 0' для наименований на листе Пр8 Ф8 ТЗР
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Всего строк на листе: 11
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропущено пустых строк: 5
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропущено служебных строк: 0
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Собрано элементов: 1
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Найдено 1 элементов на листе 'Пр8 Ф8 ТЗР'
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Сканирование листа 3/4: 'Ф4 Прил.4.1'
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/315ef6caebe7b3d53d38e22ce711940da85c9a1b2a125e4ec0b4e46f797a9b35/тест_тест.xlsx
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.1
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.1' прочитан для анализа, обнаружено 39 строк, 25 столбцов
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель-заглушку 23УКУ 15Щ66.00.10.10' для наименований на листе Ф4 Прил.4.1
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [22]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [23]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [24]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [25]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [26]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Всего строк на листе: 39
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропущено пустых строк: 14
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Собрано элементов: 13
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Найдено 13 элементов на листе 'Ф4 Прил.4.1'
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Сканирование листа 4/4: 'Ф4 Прил.4.2'
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/315ef6caebe7b3d53d38e22ce711940da85c9a1b2a125e4ec0b4e46f797a9b35/тест_тест.xlsx
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Анализируем лист: Ф4 Прил.4.2
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 5, колонка 3
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 5, колонка 4
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Лист 'Ф4 Прил.4.2' прочитан для анализа, обнаружено 45 строк, 25 столбцов
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение сырья, материалов и вспомогательных материалов
+ на   Кабель - заглушку Х604 15Щ66.00.10.20' для наименований на листе Ф4 Прил.4.2
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'ВСЕГО по разделу 1 и 2:' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Сырье и основные материалы:' (соответствует шаблону 5: Сырье\s+и\s+основные\s+материалы)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'ИТОГО по разделу 1' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [20]: 'Вспомогательные материалы:' (соответствует шаблону 6: Вспомогательные\s+материалы)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [30]: 'ИТОГО по разделу 2' (соответствует шаблону 2: ИТОГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [31]: 'ВСЕГО  по разделу 3' (соответствует шаблону 1: ВСЕГО\s+по\s+разделу(\s+\d+)?)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропускаем служебную строку [32]: 'Возвратные отходы (вычитаются):' (соответствует шаблону 7: Возвратные\s+отходы)
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Всего строк на листе: 45
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропущено строк заголовка: 5
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропущено пустых строк: 23
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Пропущено служебных строк: 7
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Собрано элементов: 10
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Найдено 10 элементов на листе 'Ф4 Прил.4.2'
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Всего найдено 31 элементов на всех листах
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Уникальных элементов: 24
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Группируем похожие элементы...
+2025-05-15 19:39:42 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 19:39:45 [INFO] FullFormatProcessor: Модель инициализирована успешно за 3.0 сек.
+2025-05-15 19:39:45 [INFO] FullFormatProcessor: Сгруппировано в 18 групп
+2025-05-15 19:39:45 [INFO] FullFormatProcessor: Обработка группы 1/18: Кабель заглушка
+2025-05-15 19:47:12 [INFO] FullFormatProcessor: Упрощено до: Кабель заглушка
+2025-05-15 19:49:10 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:49:10 [INFO] FullFormatProcessor: Обработка группы 2/18: Пруток
+2025-05-15 19:50:34 [INFO] FullFormatProcessor: Упрощено до: профиль алюминевый
+2025-05-15 19:51:43 [INFO] FullFormatProcessor: Выбран код: 32.99.59.000 - Изделия различные прочие, не включенные в другие группировки
+2025-05-15 19:51:43 [INFO] FullFormatProcessor: Обработка группы 3/18: Гайка DIN гост
+2025-05-15 19:53:26 [INFO] FullFormatProcessor: Упрощено до: Гайка DIN
+2025-05-15 19:54:54 [INFO] FullFormatProcessor: Выбран код: 25.94.11.130 - Гайки из черных металлов
+2025-05-15 19:54:54 [INFO] FullFormatProcessor: Обработка группы 4/18: Винт ГОСТ
+2025-05-15 19:56:34 [INFO] FullFormatProcessor: Упрощено до: болты и винты алюминевый
+2025-05-15 20:11:39 [INFO] app: Starting process with Format 4_1 file: /tmp/gradio/1ce56cc4476cd7ca375fc179d572fbc99702aed0894a2c34d69fe5519a6eeaa9/6_1_test.xlsx
+2025-05-15 20:11:39 [INFO] FullFormatProcessor: Создана резервная копия исходного файла: /tmp/gradio/1ce56cc4476cd7ca375fc179d572fbc99702aed0894a2c34d69fe5519a6eeaa9/6_1_test_original.xlsx
+2025-05-15 20:11:39 [INFO] FullFormatProcessor: Установлено пропуск 3 строк заголовка
+2025-05-15 20:11:39 [INFO] app: Set to skip 3 header rows
+2025-05-15 20:11:39 [INFO] FullFormatProcessor: Начало обработки файла: /tmp/gradio/1ce56cc4476cd7ca375fc179d572fbc99702aed0894a2c34d69fe5519a6eeaa9/6_1_test.xlsx
+2025-05-15 20:11:39 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 20:13:24 [INFO] FullFormatProcessor: Модель инициализирована успешно за 105.1 сек.
+2025-05-15 20:13:24 [INFO] FullFormatProcessor: Начало обработки файла формата 4_1: /tmp/gradio/1ce56cc4476cd7ca375fc179d572fbc99702aed0894a2c34d69fe5519a6eeaa9/6_1_test.xlsx
+2025-05-15 20:13:24 [INFO] FullFormatProcessor: Пропускаем первые 3 строк заголовка
+2025-05-15 20:13:24 [INFO] FullFormatProcessor: Файл содержит 2 листов: Ф6 ПКИ, Прил.6.1.
+2025-05-15 20:13:24 [INFO] FullFormatProcessor: Сканирование листа 1/2: 'Ф6 ПКИ'
+2025-05-15 20:13:24 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/1ce56cc4476cd7ca375fc179d572fbc99702aed0894a2c34d69fe5519a6eeaa9/6_1_test.xlsx
+2025-05-15 20:13:24 [INFO] FullFormatProcessor: Анализируем лист: Ф6 ПКИ
+2025-05-15 20:13:24 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 20:13:24 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 3
+2025-05-15 20:13:24 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Лист 'Ф6 ПКИ' прочитан для анализа, обнаружено 24 строк, 25 столбцов
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на  на приобретение комплектующих изделий
+     на    Комплект СОП 15Щ80.00.00.000 ' для наименований на листе Ф6 ПКИ
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [6]: 'Приобретение комплектующих изделий:' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [7]: 'Приобретение комплектующих изделий на Гидроблок  15Щ80.05.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [8]: 'Приобретение комплектующих изделий на Холодильная насосная станция  15Щ80.09.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [9]: 'Приобретение комплектующих изделий на Шкаф автоматики  15Щ80.11.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [10]: 'Приобретение комплектующих изделий на Основание установочное  15Щ17М.12.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [11]: 'Приобретение комплектующих изделий на Комплект кабелей   15Щ80.08.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [12]: 'Приобретение комплектующих изделий на Комплект трубопроводов  15Щ17М.17.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [13]: 'Приобретение комплектующих изделий на Комплект ЗИП-О  15Щ80.90.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [14]: 'Приобретение комплектующих изделий на Источник питания 15Р378.00.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [15]: 'Приобретение комплектующих изделий на БУ 15Щ80.06.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [16]: 'Приобретение комплектующих изделий на ПКУ 15Щ17М.14.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [17]: 'Приобретение комплектующих изделий на БС 15Щ17М.04.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [18]: 'ИТОГО' (соответствует шаблону 14: \bИТОГО\b)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Всего строк на листе: 24
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропущено строк заголовка: 3
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропущено пустых строк: 8
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропущено служебных строк: 13
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Собрано элементов: 0
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Найдено 0 элементов на листе 'Ф6 ПКИ'
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Сканирование листа 2/2: 'Прил.6.1.'
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/1ce56cc4476cd7ca375fc179d572fbc99702aed0894a2c34d69fe5519a6eeaa9/6_1_test.xlsx
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Анализируем лист: Прил.6.1.
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 3
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Лист 'Прил.6.1.' прочитан для анализа, обнаружено 24 строк, 25 столбцов
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Используем колонку 'РАСШИФРОВКА
+затрат на приобретение комплектующих изделий
+ на   Гидроблок 15Щ80.05.00.000 ' для наименований на листе Прил.6.1.
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [6]: 'Приобретение комплектующих изделий:' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [15]: 'Приобретение комплектующих изделий на Комплект кабелей ГБ  15Щ80.05.08.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [16]: 'Приобретение комплектующих изделий на  Клапан электромагнитный гидравлический КГМ.01.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [17]: 'Приобретение комплектующих изделий на Нагреватель СЭМ.ЭН.01.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [18]: 'Приобретение комплектующих изделий на Индикатор расхода СЭМ.ИР.01.00.000' (соответствует шаблону 8: Приобретение\s+комплектующих\s+изделий)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропускаем служебную строку [19]: 'ИТОГО' (соответствует шаблону 14: \bИТОГО\b)
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Всего строк на листе: 24
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропущено строк заголовка: 3
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропущено пустых строк: 7
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Пропущено служебных строк: 6
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Собрано элементов: 8
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Найдено 8 элементов на листе 'Прил.6.1.'
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Всего найдено 8 элементов на всех листах
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Уникальных элементов: 8
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Группируем похожие элементы...
+2025-05-15 20:13:25 [INFO] FullFormatProcessor: Инициализация модели...
+2025-05-15 20:13:26 [INFO] FullFormatProcessor: Модель инициализирована успешно за 1.2 сек.
+2025-05-15 20:13:26 [INFO] FullFormatProcessor: Сгруппировано в 2 групп
+2025-05-15 20:13:26 [INFO] FullFormatProcessor: Обработка группы 1/2: Болт
+2025-05-15 20:14:59 [INFO] FullFormatProcessor: Упрощено до: болты и винты
+2025-05-15 20:16:16 [INFO] FullFormatProcessor: Выбран код: 25.94.11.110 - Болты и винты из черных металлов
+2025-05-15 20:16:16 [INFO] FullFormatProcessor: Обработка группы 2/2: Вилка РТТ
+2025-05-15 20:17:56 [INFO] FullFormatProcessor: Упрощено до: Вилка профиль алюминевый
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Выбран код: 22.29.23.110 - Посуда столовая и кухонная пластмассовая
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Определены коды ОКПД для 8 уникальных элементов
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Обновление листа 'Прил.6.1.': 8 элементов
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/1ce56cc4476cd7ca375fc179d572fbc99702aed0894a2c34d69fe5519a6eeaa9/6_1_test.xlsx
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Анализируем лист: Прил.6.1.
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 3
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Найдены колонки на листе 'Прил.6.1.': наименование(3), код(4)
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Обновлена ячейка Прил.6.1.:(9, 4): '-' -> '25.94.11.110' для 'Болт 3М8-6gх32.68.019   7798-70'
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Обновлена ячейка Прил.6.1.:(10, 4): '-' -> '25.94.11.110' для 'Болт М10-6gх35.68.019   7798-70'
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Обновлена ячейка Прил.6.1.:(11, 4): '-' -> '25.94.11.110' для 'Болт М12-6gх30.68.019   7798-71'
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Обновлена ячейка Прил.6.1.:(12, 4): '-' -> '25.94.11.110' для 'Болт М6-8gх16.68.019   7798-70'
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Обновлена ячейка Прил.6.1.:(13, 4): '-' -> '25.94.11.110' для 'Болт М6-8gх45.48.019   7798-70'
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Ожидаемый текст 'Болт М 6-6g х 20.68.019      7805-70', фактический 'Болт М 6-6g х 20.68.019      7805-70 ' в строке 14
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Обновлено 8 ячеек на листе 'Прил.6.1.'
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Увеличение ширины колонки с кодами ОКПД на всех листах
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/1ce56cc4476cd7ca375fc179d572fbc99702aed0894a2c34d69fe5519a6eeaa9/6_1_test.xlsx
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Анализируем лист: Ф6 ПКИ
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 3
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Лист 'Ф6 ПКИ': ширина колонки D изменена с 7.8226164019808 на 23.4678492059424
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Excel файл открыт: /tmp/gradio/1ce56cc4476cd7ca375fc179d572fbc99702aed0894a2c34d69fe5519a6eeaa9/6_1_test.xlsx
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Анализируем лист: Прил.6.1.
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 2, колонка 3
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Найдена колонка 'Наименование': строка 4, колонка 3
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Найдена колонка 'Код ОКП/ОКПД2': строка 4, колонка 4
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Лист 'Прил.6.1.': ширина колонки D изменена с 8.56762764899438 на 25.702882946983138
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Ширина колонок с кодами ОКПД успешно увеличена на всех листах
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Файл успешно обновлен, проставлено 8 кодов ОКПД
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Копия результата сохранена в /tmp/tmpw4h0xc1h.xlsx
+2025-05-15 20:28:11 [INFO] FullFormatProcessor: Обработка завершена за 992.7 сек. Результат сохранен в /tmp/tmpw4h0xc1h.xlsx

@@ -6,7 +6,7 @@ import os
 import pandas as pd
 from logger import setup_logger
 from .standard_processor import StandardProcessor
-from .format_4_1_processor import Format41Processor
+from .full_format_processor import FullFormatProcessor
 from .multi_sheet_processor import MultiSheetProcessor
 
 logger = setup_logger('processor_factory')
@@ -26,8 +26,8 @@ def create_processor(input_file, checkpoint_name="checkpoint.xlsx", save_interva
     """
     # Проверка по имени файла
     if "4_1" in os.path.basename(input_file.name):
-        logger.info(f"Creating Format41Processor based on filename")
-        return Format41Processor(input_file, checkpoint_name, save_interval, progress)
+        logger.info(f"Creating FullFormatProcessor based on filename")
+        return FullFormatProcessor(input_file, checkpoint_name, save_interval, progress)
     
     # Проверка наличия нескольких листов
     try:
@@ -67,8 +67,8 @@ def create_processor(input_file, checkpoint_name="checkpoint.xlsx", save_interva
                 has_complex_structure = True
                 
             if has_section_header or has_complex_structure:
-                logger.info(f"Creating Format41Processor based on file structure")
-                return Format41Processor(input_file, checkpoint_name, save_interval, progress)
+                logger.info(f"Creating FullFormatProcessor based on file structure")
+                return FullFormatProcessor(input_file, checkpoint_name, save_interval, progress)
                 
         # По умолчанию используем стандартный процессор
         logger.info(f"Creating StandardProcessor")

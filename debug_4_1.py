@@ -2,7 +2,7 @@ import pandas as pd
 import openpyxl
 import os
 import logging
-from processors.format_4_1_processor import Format41Processor
+from okpd_fetcher.OKPD_fetcher.processors.full_format_processor import FullFormatProcessor
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, 
@@ -18,10 +18,10 @@ class MockFile:
         self.name = name
 
 if os.path.exists(test_file):
-    logger.info(f"Testing Format41Processor with file: {test_file}")
+    logger.info(f"Testing FullFormatProcessor with file: {test_file}")
     
     # Create a processor instance
-    processor = Format41Processor(MockFile(test_file), checkpoint_name="debug_checkpoint.xlsx")
+    processor = FullFormatProcessor(MockFile(test_file), checkpoint_name="debug_checkpoint.xlsx")
     
     # Set the number of header rows (default is 5)
     processor.NUM_HEADER_ROWS = 5

@@ -5,9 +5,8 @@ import os
 from logger import setup_logger
 from gradio_log import Log
 from processors.standard_processor import StandardProcessor
-from processors.format_4_1_processor import Format41Processor
+from processors.full_format_processor import FullFormatProcessor
 import threading
-
 
 
 
@@ -50,15 +49,15 @@ def process_format_41_file(
     progress=None
 ):
     """
-    Обработка файла Excel в формате 4_1
+    Обработка файла Excel в полном формате
     """
     logger.info(f"Starting process with Format 4_1 file: {input_file.name}")
     
     # Обновляем статус
-    yield None, f"Запуск обработки файла формата 4_1. Пропускаем {header_rows} строк заголовка..."
+    yield None, f"Запуск обработки файла в полном формате. Пропускаем {header_rows} строк заголовка..."
     
-    # Создание процессора для формата 4_1
-    processor = Format41Processor(input_file, checkpoint_name, save_interval, progress)
+    # Создание процессора для полного формата
+    processor = FullFormatProcessor(input_file, checkpoint_name, save_interval, progress)
     
     # Устанавливаем количество строк заголовка для пропуска
     processor.NUM_HEADER_ROWS = int(header_rows)
@@ -95,7 +94,9 @@ header_style = "font-size: 28px; font-weight: 600; margin-bottom: 10px"
 subheader_style = "font-size: 18px; font-weight: 500; margin-bottom: 5px"
 description_style = "font-size: 14px; margin-bottom: 20px"
 
-with gr.Blocks(theme=gr.themes.Soft(primary_hue=gr.themes.colors.green)) as demo:
+with gr.Blocks(
+    # theme=gr.themes.Soft(primary_hue=gr.themes.colors.green)
+    ) as demo:
     gr.Markdown(f"<h1 style='{header_style}'>ОКПД2 Обработчик Файлов</h1>")
     gr.Markdown(f"<p style='{description_style}'>Инструмент для автоматического присвоения кодов ОКПД2 товарам и услугам из Excel файлов.</p>")
     
@@ -161,14 +162,14 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue=gr.themes.colors.green)) as demo
             outputs=std_status
         )
 
-    with gr.Tab("Формат 4_1"):
-        gr.Markdown(f"<h2 style='{subheader_style}'>Обработка файла формата 4_1</h2>")
-        gr.Markdown(f"<p style='{description_style}'>Этот режим предназначен для обработки файлов формата 4_1, содержащих спецификации с колонкой 'Наименование' и пропуском служебных строк (заголовки разделов, итоги, отходы и т.д.)</p>")
+    with gr.Tab("Полный формат"):
+        gr.Markdown(f"<h2 style='{subheader_style}'>Обработка файла в полном формате</h2>")
+        gr.Markdown(f"<p style='{description_style}'>Этот режим предназначен для обработки файлов в полном формате, содержащих спецификации с колонкой 'Наименование' и пропуском служебных строк (заголовки разделов, итоги, отходы и т.д.)</p>")
         
         with gr.Row():
             with gr.Column(scale=3):
                 f41_file_input = gr.File(
-                    label="Загрузить Excel файл формата 4_1 (.xlsx)", 
+                    label="Загрузить Excel файл в полном формате (.xlsx)", 
                     file_types=[".xlsx"],
                     interactive=True
                 )
@@ -176,7 +177,7 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue=gr.themes.colors.green)) as demo
             with gr.Column(scale=2):
                 f41_checkpoint_name = gr.Textbox(
                     label="Имя файла для сохранения промежуточных результатов", 
-                    value="checkpoint_41.xlsx",
+                    value="checkpoint.xlsx",
                     info="При длительной обработке файла, промежуточные результаты будут сохраняться в этот файл"
                 )
                 f41_save_interval = gr.Slider(
@@ -236,7 +237,7 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue=gr.themes.colors.green)) as demo
         
         **Возможности:**
         - Обработка файлов Excel со стандартной структурой (колонка 'Наименование')
-        - Обработка файлов формата 4_1 с автоматическим определением колонок и пропуском служебных строк
+        - Обработка файлов в полном формате с автоматическим определением колонок и пропуском служебных строк
         - Поддержка многолистовых Excel-файлов
         - Автоматический поиск и присвоение кодов ОКПД2
         - Сохранение промежуточных результатов в процессе работы
@@ -246,14 +247,14 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue=gr.themes.colors.green)) as demo
         1. Выберите подходящий формат файла на соответствующей вкладке
         2. Загрузите Excel-файл
         3. При необходимости измените имя файла для сохранения промежуточных результатов
-        4. Для формата 4_1 укажите количество строк заголовка для пропуска
+        4. Для полного формата укажите количество строк заголовка для пропуска
         5. Нажмите кнопку "Запустить обработку"
         6. Дождитесь завершения процесса и скачайте результат
         
         **При возникновении ошибок:**
-        - Проверьте, что выбран правильный формат файла (стандартный или 4_1)
+        - Проверьте, что выбран правильный формат файла (стандартный или полной формат)
         - Для стандартного формата - в файле должна быть колонка 'Наименование'
-        - Для формата 4_1 - настройте количество пропускаемых строк заголовка
+        - Для полного формате - настройте количество пропускаемых строк заголовка
         - Следите за обновлениями статуса обработки, там будет отображаться текущий этап
         """)
 

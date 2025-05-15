@@ -15,7 +15,7 @@ from src.okpd_fetch import fetch_okpd2_batch
 from openpyxl.utils import get_column_letter
 from .base_processor import BaseProcessor
 
-class Format41Processor(BaseProcessor):
+class FullFormatProcessor(BaseProcessor):
     """
     Процессор для формата 4_1.
     
@@ -474,7 +474,7 @@ class Format41Processor(BaseProcessor):
                 return False
             
         except Exception as e:
-            self.logger.exception(f"Ошибка в Format41Processor: {e}")
+            self.logger.exception(f"Ошибка в FullFormatProcessor: {e}")
             return False
             
     def _collect_items_from_sheet(self):

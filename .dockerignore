@@ -1,0 +1,13 @@
+.git/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+duckduckgo_cache.json
+okpd_cache.json
+.DS_Store
+checkpoint*.xlsx
+output*.xlsx
+*.log
+*.xlsx 

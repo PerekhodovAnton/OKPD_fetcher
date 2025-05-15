@@ -26,8 +26,6 @@ def save_cache(cache: dict):
 
 CACHE = load_cache()
 
-
-
 def web_search(query: str, max_results: int = 2) -> List[str]:
     """
     Search the web for information about a query

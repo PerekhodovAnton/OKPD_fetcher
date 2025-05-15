@@ -3,7 +3,6 @@ import pandas as pd
 import logging
 import os
 from logger import setup_logger
-from gradio_log import Log
 from processors.standard_processor import StandardProcessor
 from processors.full_format_processor import FullFormatProcessor
 import threading
@@ -312,4 +311,4 @@ with gr.Blocks(
     demo.queue()  # Включаем очередь для фоновой обработки
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0", server_port=7860)

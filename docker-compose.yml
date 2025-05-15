@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  okpd_fetcher:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+      - okpd_data:/app/data
+    ports:
+      - "7860:7860"
+    command: python app.py
+
+volumes:
+  okpd_data:
+    driver: local

@@ -28,8 +28,9 @@ class Format41Processor(BaseProcessor):
     
     # Шаблоны для строк, которые нужно пропустить
     SKIP_PATTERNS = [
-        r'ВСЕГО\s+по\s+разделу',
-        r'ИТОГО\s+по\s+разделу',
+        # Полные фразы
+        r'ВСЕГО\s+по\s+разделу(\s+\d+)?',
+        r'ИТОГО\s+по\s+разделу(\s+\d+)?',
         r'ВСЕГО\s+\d+',
         r'ИТОГО\s+\d+',
         r'Сырье\s+и\s+основные\s+материалы',
@@ -37,7 +38,30 @@ class Format41Processor(BaseProcessor):
         r'Возвратные\s+отходы',
         r'Приобретение\s+комплектующих\s+изделий',
         r'Покупные\s+комплектующие\s+изделия',
-        r'Возвратные\s+отходы\s+\(вычитаются\)'
+        r'Возвратные\s+отходы\s+\(вычитаются\)',
+        # Заголовки разделов
+        r'Раздел\s+\d+',
+        r'^\s*№\s*п/п\s*$',
+        r'\bНаименование\s+показателя\b',
+        # Отдельные ключевые слова с учетом границ слов
+        r'\bИТОГО\b',
+        r'\bВСЕГО\b',
+        r'\bСырье\b', 
+        r'\bВспомогательные(\s+материалы)?\b',
+        r'\bВозвратные(\s+отходы)?\b',
+        r'\bПриобретение\b',
+        r'\bПокупные\b',
+        r'\bОтходы\b',
+        r'\bМатериалы\b',
+        r'\bКомплектующие\b',
+        r'\bПолуфабрикаты\b',
+        r'\bИзделия\b',
+        # Дополнительные служебные тексты
+        r'Код\s+ОКП',
+        r'Код\s+ОКПД',
+        r'Единица\s+измерения',
+        r'\bТС\b',
+        r'\bШт\b$'
     ]
     
     # Компилируем регулярные выражения для быстрой проверки
@@ -189,14 +213,89 @@ class Format41Processor(BaseProcessor):
             self.logger.info(f"Начало обработки файла формата 4_1: {self.input_path}")
             self.logger.info(f"Пропускаем первые {self._num_header_rows} строк заголовка")
             
-            # Находим колонки в Excel файле
-            if not self._find_columns_in_excel():
+            # Открываем Excel файл для получения информации о листах
+            if not os.path.exists(self.input_path):
+                self.logger.error(f"Файл не найден: {self.input_path}")
+                return False
+                
+            try:
+                # Открываем файл с помощью openpyxl для получения списка листов
+                workbook = openpyxl.load_workbook(self.input_path)
+                sheet_names = workbook.sheetnames
+                sheet_count = len(sheet_names)
+                self.logger.info(f"Файл содержит {sheet_count} листов: {', '.join(sheet_names)}")
+                
+                # Обрабатываем каждый лист по очереди
+                all_results = {}  # Общий словарь результатов
+                
+                for sheet_idx, sheet_name in enumerate(sheet_names, start=1):
+                    self.logger.info(f"Обработка листа {sheet_idx}/{sheet_count}: '{sheet_name}'")
+                    
+                    # Устанавливаем текущий лист
+                    self.sheet_name = sheet_name
+                    
+                    # Очищаем предыдущие результаты
+                    self.workbook = None
+                    self.name_column_index = None
+                    self.code_column_index = None
+                    self.results_to_update = {}
+                    
+                    # Находим колонки в текущем листе
+                    success = self._find_columns_in_excel()
+                    if not success:
+                        self.logger.warning(f"Невозможно обработать лист '{sheet_name}', пропускаем")
+                        continue
+                    
+                    # Читаем данные из текущего листа
+                    try:
+                        # Читаем данные из конкретного листа
+                        self.df = pd.read_excel(self.input_path, sheet_name=sheet_name)
+                        self.logger.info(f"Лист '{sheet_name}' прочитан для анализа, обнаружено {self.df.shape[0]} строк, {self.df.shape[1]} столбцов")
+                    except Exception as e:
+                        self.logger.warning(f"Ошибка при чтении листа '{sheet_name}': {e}")
+                        continue
+                        
+                    # Продолжаем стандартную обработку для конкретного листа
+                    sheet_success = self._process_sheet()
+                    
+                    if sheet_success:
+                        # Добавляем результаты в общий словарь
+                        all_results[sheet_name] = self.results_to_update.copy()
+                        self.logger.info(f"Лист '{sheet_name}' успешно обработан, найдено {len(self.results_to_update)} элементов с кодами ОКПД")
+                        
+                        # Сохраняем результаты для текущего листа
+                        self._update_excel_with_codes()
+                    else:
+                        self.logger.warning(f"Обработка листа '{sheet_name}' не удалась")
+                
+                # Общие результаты
+                total_items = sum(len(results) for results in all_results.values())
+                self.logger.info(f"Всего обработано {len(all_results)} листов, {total_items} элементов получили коды ОКПД")
+                
+                # Копируем исходный файл в output_path для интерфейса
+                try:
+                    shutil.copy2(self.input_path, self.output_path)
+                    self.logger.info(f"Копия результата сохранена в {self.output_path}")
+                except Exception as e:
+                    self.logger.warning(f"Не удалось создать копию результата: {e}")
+                
+                return True if all_results else False
+                
+            except Exception as e:
+                self.logger.exception(f"Ошибка при обработке листов Excel: {e}")
                 return False
             
-            # Теперь читаем данные с pandas для более удобной обработки
-            self.df = pd.read_excel(self.input_path)
-            self.logger.info(f"Файл прочитан для анализа, обнаружено {self.df.shape[0]} строк, {self.df.shape[1]} столбцов")
-            
+        except Exception as e:
+            self.logger.exception(f"Ошибка в Format41Processor: {e}")
+            return False
+    
+    def _process_sheet(self):
+        """Обработка отдельного листа формата 4_1"""
+        try:
+            if self.df is None or self.name_column_index is None:
+                self.logger.error("Не удалось инициализировать данные для обработки листа")
+                return False
+                
             # Определяем имена колонок
             if self.name_column_index is not None:
                 # Преобразуем индекс колонки openpyxl (с 1) в индекс pandas (с 0)
@@ -306,14 +405,14 @@ class Format41Processor(BaseProcessor):
                 
                 # Проверяем по шаблонам служебных строк
                 skip_item = False
-                for pattern in self.SKIP_PATTERNS_COMPILED:
+                for i, pattern in enumerate(self.SKIP_PATTERNS_COMPILED):
                     if pattern.search(item_text):
                         skip_item = True
+                        patterns_skipped += 1
+                        self.logger.info(f"Пропускаем служебную строку [{idx}]: '{item_text}' (соответствует шаблону {i+1}: {self.SKIP_PATTERNS[i]})")
                         break
                         
                 if skip_item:
-                    patterns_skipped += 1
-                    self.logger.info(f"Пропускаем служебную строку [{idx}]: '{item_text}'")
                     continue
                     
                 # Добавляем элемент для обработки
@@ -323,13 +422,13 @@ class Format41Processor(BaseProcessor):
             self.skipped_rows = headers_skipped + empty_skipped
             self.skipped_service_rows = patterns_skipped
             
-            self.logger.info(f"Всего строк в файле: {total_rows}")
+            self.logger.info(f"Всего строк в листе: {total_rows}")
             self.logger.info(f"Пропущено строк заголовка: {headers_skipped}")
             self.logger.info(f"Пропущено пустых строк: {empty_skipped}")
             self.logger.info(f"Пропущено служебных строк: {patterns_skipped}")
                 
             if not items_to_process:
-                self.logger.error("Не найдено элементов для обработки")
+                self.logger.warning("Не найдено элементов для обработки на листе")
                 return False
                 
             self.logger.info(f"Найдено {len(items_to_process)} элементов для обработки")
@@ -353,8 +452,8 @@ class Format41Processor(BaseProcessor):
             
             # Безопасная работа с прогрессом
             if self.progress is not None:
-                self.progress(0, desc="Обработка наименований...", total=total_groups)
-                progress_iter = self.progress.tqdm(groups, desc="Обработка групп")
+                self.progress(0, desc=f"Обработка листа {self.sheet_name}...", total=total_groups)
+                progress_iter = self.progress.tqdm(groups, desc=f"Обработка групп в {self.sheet_name}")
             else:
                 progress_iter = groups
                 
@@ -363,9 +462,7 @@ class Format41Processor(BaseProcessor):
             success_items = 0
             error_items = 0
             
-            # Очищаем словарь результатов перед обработкой
-            self.results_to_update = {}
-            
+            # Дополнительная проверка даже после группировки элементов
             for idx, group in enumerate(progress_iter, start=1):
                 if self.stop_event.is_set():
                     self.logger.info("Обработка остановлена пользователем")
@@ -378,6 +475,18 @@ class Format41Processor(BaseProcessor):
                 
                 # Берем представителя группы
                 rep = group[0]
+                
+                # Дополнительная проверка перед обработкой
+                # Проверяем снова чтобы не пропустить служебные строки
+                is_service_line = False
+                for i, pattern in enumerate(self.SKIP_PATTERNS_COMPILED):
+                    if pattern.search(rep):
+                        self.logger.warning(f"Пропускаем служебную строку (повторная проверка): '{rep}' (соответствует шаблону {i+1}: {self.SKIP_PATTERNS[i]})")
+                        is_service_line = True
+                        break
+                
+                if is_service_line:
+                    continue
                 
                 try:
                     # Нормализуем термин
@@ -413,7 +522,7 @@ class Format41Processor(BaseProcessor):
                     # Сохраняем промежуточный результат
                     if idx % int(self.save_interval) == 0:
                         self._update_excel_with_codes()
-                        self.logger.info(f"Сохранен промежуточный результат после {idx}/{total_groups} групп ({processed_items} элементов)")
+                        self.logger.info(f"Сохранен промежуточный результат для листа {self.sheet_name} после {idx}/{total_groups} групп ({processed_items} элементов)")
                         
                 except Exception as e:
                     self.logger.exception(f"Ошибка при обработке группы {idx}: {e}")
@@ -422,26 +531,12 @@ class Format41Processor(BaseProcessor):
             # Обновляем счетчики для финального отчета
             self.processed_items = processed_items
             
-            # Обновляем Excel-файл с кодами ОКПД
-            result = self._update_excel_with_codes()
+            self.logger.info(f"Обработка листа '{self.sheet_name}' завершена: обработано {processed_groups}/{total_groups} групп, {success_items} элементов успешно, {error_items} с ошибками")
             
-            if result:
-                self.logger.info(f"Обработка завершена, результаты сохранены в исходный файл с сохранением форматирования")
-                self.logger.info(f"Итого: обработано {processed_groups}/{total_groups} групп, {success_items} элементов успешно, {error_items} с ошибками")
-                
-                # Копируем исходный файл с обновлениями в output_path для интерфейса
-                try:
-                    shutil.copy2(self.input_path, self.output_path)
-                    self.logger.info(f"Копия результата сохранена в {self.output_path}")
-                except Exception as e:
-                    self.logger.warning(f"Не удалось создать копию результата: {e}")
-            else:
-                self.logger.error("Ошибка при сохранении результатов в исходный файл")
-                
-            return result
+            return True
             
         except Exception as e:
-            self.logger.exception(f"Ошибка в Format41Processor: {e}")
+            self.logger.exception(f"Ошибка при обработке листа '{self.sheet_name}': {e}")
             return False
     
     def _update_excel_with_codes(self):
@@ -478,9 +573,81 @@ class Format41Processor(BaseProcessor):
             # Счетчик обновлений
             updated = 0
             
+            # Создаем словарь для поиска текстов по содержимому листа
+            cell_content_map = {}
+            items_found = set()
+            
+            # Список всех листов для поиска
+            sheets_to_search = [sheet]
+            
+            # Если не нашли текст на текущем листе, попробуем поискать на других листах
+            if len(self.results_to_update) > 0 and self.workbook.sheetnames:
+                for sheet_name in self.workbook.sheetnames:
+                    if sheet_name != sheet.title:
+                        other_sheet = self.workbook[sheet_name]
+                        sheets_to_search.append(other_sheet)
+                        self.logger.info(f"Добавлен лист '{sheet_name}' для поиска элементов")
+            
+            # Выводим список элементов для отладки
+            if len(self.results_to_update) < 10:
+                elements_to_find = [data['item'] for _, data in self.results_to_update.items()]
+                self.logger.info(f"Ищем элементы: {elements_to_find}")
+            else:
+                self.logger.info(f"Ищем {len(self.results_to_update)} элементов")
+            
+            # Проверяем каждый лист для построения карты
+            for current_sheet in sheets_to_search:
+                self.logger.info(f"Сканирование листа '{current_sheet.title}' для поиска элементов")
+                
+                for row in range(1, current_sheet.max_row + 1):
+                    # Ищем ячейку с названием элемента
+                    name_col = self.name_column_index
+                    cell = current_sheet.cell(row=row, column=name_col)
+                    
+                    if cell.value:
+                        # Нормализуем текст ячейки для лучшего сравнения
+                        cell_text = str(cell.value)
+                        normalized_text = self._normalize_cell_text(cell_text)
+                        
+                        if normalized_text:
+                            # Сохраняем строку и лист
+                            cell_content_map[normalized_text] = (current_sheet, row)
+                            
+                            # Добавляем также версию без пробелов
+                            no_spaces = normalized_text.replace(" ", "")
+                            if no_spaces != normalized_text:
+                                cell_content_map[no_spaces] = (current_sheet, row)
+                            
+                            # Проверяем, нашли ли мы какой-то из искомых элементов
+                            for _, data in self.results_to_update.items():
+                                item_text = data['item']
+                                item_norm = self._normalize_cell_text(item_text)
+                                
+                                if (item_norm == normalized_text or 
+                                    item_norm.replace(" ", "") == no_spaces or
+                                    normalized_text in item_norm or 
+                                    item_norm in normalized_text):
+                                    items_found.add(item_text)
+            
+            # Отладочная информация о найденных элементах
+            found_percent = len(items_found) / len(self.results_to_update) * 100 if self.results_to_update else 0
+            self.logger.info(f"Построена карта содержимого листов: найдено {len(items_found)} из {len(self.results_to_update)} элементов ({found_percent:.1f}%)")
+            
+            # Если не найдены некоторые элементы, выведем их для отладки
+            if len(items_found) < len(self.results_to_update) and len(self.results_to_update) - len(items_found) < 10:
+                missing = [data['item'] for _, data in self.results_to_update.items() if data['item'] not in items_found]
+                self.logger.warning(f"Не найдены элементы: {missing}")
+            elif len(items_found) < len(self.results_to_update):
+                self.logger.warning(f"Не найдено {len(self.results_to_update) - len(items_found)} элементов")
+            
             for row_idx, data in self.results_to_update.items():
                 code = data['code']
                 column_name = data['column_name']
+                item_text = data['item']
+                
+                # Нормализуем текст элемента для лучшего сравнения
+                item_normalized = self._normalize_cell_text(item_text)
+                item_no_spaces = item_normalized.replace(" ", "")
                 
                 # Определяем номер колонки для кода ОКПД
                 if isinstance(column_name, int):
@@ -494,18 +661,73 @@ class Format41Processor(BaseProcessor):
                     self.logger.warning(f"Не удалось определить колонку для кода ОКПД")
                     continue
                 
-                # Номер строки в Excel (строка в pandas + header_rows)
+                # Номер строки в Excel (строка в pandas + header_rows + 1 для учета индексации с 0)
                 excel_row = int(row_idx) + 1
+                target_sheet = sheet  # По умолчанию текущий лист
+                
+                # Проверяем, найден ли элемент в карте содержимого
+                found = False
+                
+                # Пробуем точное совпадение
+                if item_normalized in cell_content_map:
+                    target_sheet, excel_row = cell_content_map[item_normalized]
+                    self.logger.info(f"Найдено точное соответствие для '{item_text}' в листе '{target_sheet.title}', строка {excel_row}")
+                    found = True
+                # Пробуем версию без пробелов
+                elif item_no_spaces in cell_content_map:
+                    target_sheet, excel_row = cell_content_map[item_no_spaces]
+                    self.logger.info(f"Найдено соответствие без пробелов для '{item_text}' в листе '{target_sheet.title}', строка {excel_row}")
+                    found = True
+                else:
+                    # Если точного совпадения нет, попробуем найти по частичному совпадению
+                    best_match = None
+                    best_ratio = 0.8  # Минимальный порог сходства (80%)
+                    best_key = None
+                    
+                    # Поиск методом частичного совпадения
+                    for key, (s, row) in cell_content_map.items():
+                        # Пропускаем короткие строки
+                        if len(key) < 5:
+                            continue
+                            
+                        # Проверяем, содержит ли текст ячейки наш элемент
+                        if item_normalized in key or key in item_normalized:
+                            ratio = len(min(item_normalized, key, key=len)) / len(max(item_normalized, key, key=len))
+                            if ratio > best_ratio:
+                                best_ratio = ratio
+                                best_match = (s, row)
+                                best_key = key
+                    
+                    if best_match:
+                        target_sheet, excel_row = best_match
+                        cell_value = target_sheet.cell(row=excel_row, column=self.name_column_index).value
+                        self.logger.info(f"Найдено частичное соответствие для '{item_text}' в листе '{target_sheet.title}', строка {excel_row}: '{cell_value}' (совпадение {best_ratio:.2f})")
+                        found = True
+                
+                # Если не найдено совпадение, пропускаем элемент
+                if not found:
+                    self.logger.warning(f"Не удалось найти строку с текстом '{item_text}' ни в одном листе, пропускаем")
+                    continue
                 
                 # Записываем код в ячейку
                 try:
-                    cell = sheet.cell(row=excel_row, column=col_idx)
+                    # Если лист отличается от текущего, запоминаем это
+                    if target_sheet.title != sheet.title:
+                        self.logger.info(f"Переключаемся на лист '{target_sheet.title}' для обновления ячейки")
+                    
+                    cell = target_sheet.cell(row=excel_row, column=col_idx)
                     old_value = cell.value
+                    
+                    # Проверяем, содержит ли ячейка формулу
+                    if old_value and isinstance(old_value, str) and old_value.startswith('='):
+                        self.logger.warning(f"Ячейка ({target_sheet.title}:{excel_row}, {col_idx}) содержит формулу, пропускаем: {old_value}")
+                        continue
+                    
                     cell.value = code
                     updated += 1
-                    self.logger.debug(f"Обновлена ячейка ({excel_row}, {col_idx}): '{old_value}' -> '{code}'")
+                    self.logger.debug(f"Обновлена ячейка {target_sheet.title}:({excel_row}, {col_idx}): '{old_value}' -> '{code}'")
                 except Exception as e:
-                    self.logger.warning(f"Ошибка при обновлении ячейки ({excel_row}, {col_idx}): {e}")
+                    self.logger.warning(f"Ошибка при обновлении ячейки {target_sheet.title}:({excel_row}, {col_idx}): {e}")
             
             # Сохраняем изменения
             self.workbook.save(self.input_path)
@@ -515,4 +737,27 @@ class Format41Processor(BaseProcessor):
             
         except Exception as e:
             self.logger.exception(f"Ошибка при обновлении Excel файла: {e}")
-            return False 
+            return False
+            
+    def _normalize_cell_text(self, text):
+        """Нормализует текст ячейки для сравнения"""
+        if not text:
+            return ""
+            
+        # Преобразуем в строку
+        text = str(text)
+        
+        # Заменяем неразрывные пробелы на обычные
+        text = text.replace('\xa0', ' ')
+        
+        # Убираем лишние пробелы
+        text = " ".join(text.split())
+        
+        # Удаляем непечатаемые символы
+        text = ''.join(c for c in text if c.isprintable())
+        
+        # Игнорируем специальные символы, которые могут различаться
+        text = text.replace('-', ' ').replace('_', ' ').replace('.', ' ').replace(',', ' ')
+        text = " ".join(text.split())
+        
+        return text.strip().lower()  # Приводим к нижнему регистру для регистронезависимого сравнения 

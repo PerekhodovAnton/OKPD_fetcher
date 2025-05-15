@@ -177,7 +177,7 @@ if __name__ == '__main__':
     start = time.time()
     try:
         p = Processor(
-            input_excel='test_input.xlsx',  # Use test input by default
+            input_excel='/Users/anper/oboronka_zakaz/okpd_fetcher/OKPD_fetcher/4_1_test.xlsx',  # Use test input by default
             output_excel='output.xlsx',
             checkpoint='checkpoint.xlsx',
             save_interval=10

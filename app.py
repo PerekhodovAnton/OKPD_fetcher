@@ -81,11 +81,11 @@ def cancel_process():
     return "Обработка остановлена пользователем"
 
 # Стили и цвета для интерфейса
-primary_color = "#4CAF50"
-secondary_color = "#2196F3"
-header_style = "font-size: 28px; font-weight: 600; margin-bottom: 10px; color: #212121;"
-subheader_style = "font-size: 18px; font-weight: 500; margin-bottom: 5px; color: #424242;"
-description_style = "font-size: 14px; margin-bottom: 20px; color: #616161;"
+# primary_color = "#4CAF50"
+# secondary_color = "#2196F3"
+header_style = "font-size: 28px; font-weight: 600; margin-bottom: 10px"
+subheader_style = "font-size: 18px; font-weight: 500; margin-bottom: 5px"
+description_style = "font-size: 14px; margin-bottom: 20px"
 
 with gr.Blocks(theme=gr.themes.Soft(primary_hue=gr.themes.colors.green)) as demo:
     gr.Markdown(f"<h1 style='{header_style}'>ОКПД2 Обработчик Файлов</h1>")

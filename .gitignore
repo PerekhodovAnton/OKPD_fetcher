@@ -1,0 +1,11 @@
+__pycache__
+.env
+*.gguf
+*.xlsx
+*.csv
+*.json
+*.jsonl
+*.jsonl.gz
+*.log
+.DS_Store
+*.ignore

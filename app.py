@@ -153,40 +153,7 @@ with gr.Blocks(
     ) as demo:
     gr.Markdown(f"<h1 style='{header_style}'>ОКПД2 Обработчик Файлов</h1>")
     gr.Markdown(f"<p style='{description_style}'>Инструмент для автоматического присвоения кодов ОКПД2 товарам и услугам из Excel файлов.</p>")
-    
-    # Добавляем отображение лога для удобства отладки
-    with gr.Accordion("Журнал событий (лог)", open=False):
-        log_component = gr.Textbox(
-            label="Журнал обработки",
-            value="Загрузка логов...",
-            lines=20,
-            max_lines=50,
-            interactive=False,
-            autoscroll=True,
-            show_copy_button=True,
-            elem_id="log_textarea"
-        )
         
-        # Функция обновления логов
-        def update_logs():
-            try:
-                with open('processor.log', 'r', encoding='utf-8') as f:
-                    # Получаем последние 50 строк лога
-                    lines = f.readlines()[-50:]
-                    return ''.join(lines)
-            except Exception as e:
-                return f"Ошибка чтения лога: {str(e)}"
-        
-        # Создаем таймер для автоматического обновления логов
-        refresh_interval = gr.Number(value=3, label="Интервал обновления (сек)", 
-                                    minimum=1, maximum=10, step=1, visible=False)
-        
-        # Используем interval компонент для автоматического обновления
-        log_updater = gr.Timer(3, update_logs, outputs=[log_component])
-        
-        # Кнопка для ручного обновления на случай необходимости
-        manual_refresh_btn = gr.Button("Обновить журнал вручную")
-        manual_refresh_btn.click(fn=update_logs, outputs=log_component)
 
     with gr.Tab("Стандартный формат"):
         gr.Markdown(f"<h2 style='{subheader_style}'>Обработка файла с колонкой 'Наименование'</h2>")
@@ -248,7 +215,7 @@ with gr.Blocks(
 
     with gr.Tab("Полный формат"):
         gr.Markdown(f"<h2 style='{subheader_style}'>Обработка файла в полном формате</h2>")
-        gr.Markdown(f"<p style='{description_style}'>Этот режим предназначен для обработки файлов в полном формате, содержащих спецификации с колонкой 'Наименование' и пропуском служебных строк (заголовки разделов, итоги, отходы и т.д.)</p>")
+        gr.Markdown(f"<p style='{description_style}'>Этот режим предназначен для обработки файлов в полном формате, содержащих множество колонок и пропуском служебных строк (заголовки разделов, итоги, отходы и т.д.)</p>")
         
         with gr.Row():
             with gr.Column(scale=3):

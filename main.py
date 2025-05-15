@@ -140,17 +140,9 @@ class Processor:
             \nТовар: {simplified}\nКонтекст: {context}\nВарианты:\n{options}\nВыведи только код:"}
         ]
         
-        try:
-            resp = self.model.generate(prompt)
-            code = extract_code(resp['content'])
-        except Exception as e:
-            logger.error(f"Error in model generation for {simplified}: {e}")
-            # If we fail to get a code, use the first one as fallback
-            if entries:
-                code = entries[0]['code']
-            else:
-                code = '32.99.59.000'
-
+        resp = self.model.generate(prompt)
+        code = extract_code(resp['content'])
+        
         # Find name for the selected code
         name = ''
         comment = ''

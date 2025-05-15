@@ -12,6 +12,7 @@ from copy import copy
 from main import Processor, group_similar
 from src.morphology import normalize_term
 from src.okpd_fetch import fetch_okpd2_batch
+from openpyxl.utils import get_column_letter
 from .base_processor import BaseProcessor
 
 class Format41Processor(BaseProcessor):
@@ -333,7 +334,14 @@ class Format41Processor(BaseProcessor):
                         self.logger.info(f"Обработка группы {idx}/{len(groups)}: {normalized}")
                         
                         # Получаем упрощенный термин
-                        prompt = [{"role": "user", "content": normalized}]
+                        prompt = [
+                            {"role": "system", "content": 'Ты помогаешь выбрать один код для военной компании, которая занимается производством и работает с различным металом, где производят Системы термостатирования и контроля температурно влажностного режима.'},
+                            {"role": "user", "content": f"Перефразируй название товара, удалив все размеры и числовые параметры, преобразовав тип товара.\nЕсли встречаешь металические изделия, то прибавляй алюминевый. \n \
+                            Если слово 'лист' -> 'профиль алюминевый', если слово 'круг' -> 'профиль алюминевый, если слово 'болт' или 'винт -> 'болты и винты', если слово 'гвоздь' -> 'гвоздь', если слово 'доска' или 'брусок' -> 'пиломатериалы', если слово 'жгут' -> 'жгуты синтетические', если слово 'бензин' -> 'бензин', если слово 'бензин' -> 'бензин'.\n \
+                            Если встречаешь слово на английском языке - ничего не меняй. Напрмиер: если слово 'Isolontape 500 3005 VB D LM' -> 'Isolontape' \
+                            Если встречаешь слово которого нет в примерах, ориентируйся и сделай на подобии. \
+                            \nНазвание: {normalized}\nВыведи только товар:"}
+                            ]
                         simplified = self.model.generate(prompt)['content']
                         self.logger.info(f"Упрощено до: {simplified}")
                         
@@ -342,7 +350,7 @@ class Format41Processor(BaseProcessor):
                         entries = okpd_data.get(simplified, [])
                         
                         # Выбираем подходящий код
-                        code, name, comment = Processor._decide(None, entries, rep, simplified)
+                        code, name, comment = Processor._decide(self, entries, rep, simplified)
                         self.logger.info(f"Выбран код: {code} - {name}")
                         
                         # Сохраняем код для каждого элемента в группе
@@ -443,6 +451,9 @@ class Format41Processor(BaseProcessor):
                 
                 # 6. Сохраняем результаты
                 try:
+                    # Увеличиваем ширину колонки для кодов ОКПД
+                    self._adjust_column_width()
+                    
                     self.workbook.save(self.input_path)
                     self.logger.info(f"Файл успешно обновлен, проставлено {total_updated} кодов ОКПД")
                 except Exception as e:
@@ -790,3 +801,58 @@ class Format41Processor(BaseProcessor):
         text = " ".join(text.split())
         
         return text.strip().lower()  # Приводим к нижнему регистру для регистронезависимого сравнения 
+
+    def _adjust_column_width(self):
+        """
+        Увеличивает ширину колонки с кодами ОКПД в 3 раза на всех листах
+        """
+        try:
+            if not self.workbook:
+                self.logger.warning("Рабочая книга не открыта, невозможно изменить ширину колонки")
+                return False
+            
+            self.logger.info("Увеличение ширины колонки с кодами ОКПД на всех листах")
+            
+            for sheet_name in self.workbook.sheetnames:
+                sheet = self.workbook[sheet_name]
+                
+                # Находим колонку с кодами ОКПД на текущем листе
+                # Временно сохраняем текущие значения
+                current_sheet_name = self.sheet_name
+                current_code_column_index = self.code_column_index
+                
+                # Устанавливаем текущий лист для поиска колонок
+                self.sheet_name = sheet_name
+                success = self._find_columns_in_excel()
+                
+                if success and self.code_column_index:
+                    # Получаем букву колонки из ее индекса
+                    col_letter = get_column_letter(self.code_column_index)
+                    
+                    # Получаем текущую ширину колонки
+                    current_width = sheet.column_dimensions[col_letter].width
+                    
+                    # Если ширина не задана, используем значение по умолчанию (примерно 8.43)
+                    if not current_width or current_width < 0:
+                        current_width = 8.43
+                    
+                    # Увеличиваем ширину в 3 раза
+                    new_width = current_width * 3
+                    
+                    # Устанавливаем новую ширину
+                    sheet.column_dimensions[col_letter].width = new_width
+                    
+                    self.logger.info(f"Лист '{sheet_name}': ширина колонки {col_letter} изменена с {current_width} на {new_width}")
+                else:
+                    self.logger.warning(f"Не удалось найти колонку с кодами ОКПД на листе '{sheet_name}'")
+                
+                # Восстанавливаем предыдущие значения
+                self.sheet_name = current_sheet_name
+                self.code_column_index = current_code_column_index
+            
+            self.logger.info("Ширина колонок с кодами ОКПД успешно увеличена на всех листах")
+            return True
+            
+        except Exception as e:
+            self.logger.exception(f"Ошибка при изменении ширины колонки: {e}")
+            return False 

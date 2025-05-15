@@ -6,9 +6,17 @@ from logger import setup_logger
 from gradio_log import Log
 from processors.standard_processor import StandardProcessor
 from processors.format_4_1_processor import Format41Processor
+import threading
+
+
+
 
 # Настройка логирования
 logger = setup_logger("app")
+
+
+# Global event for stopping processing
+stop_event = threading.Event()
 
 def process_standard_file(
     input_file,
@@ -148,7 +156,7 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue=gr.themes.colors.green)) as demo
         
         # Отмена обработки
         std_stop_btn.click(
-            fn=cancel_process,
+            fn=stop_event.clear(),
             inputs=[],
             outputs=std_status
         )

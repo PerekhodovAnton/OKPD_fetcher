@@ -7,6 +7,8 @@ from gradio_log import Log
 from processors.standard_processor import StandardProcessor
 from processors.full_format_processor import FullFormatProcessor
 import threading
+import time
+from tqdm.auto import tqdm
 
 
 
@@ -17,16 +19,55 @@ logger = setup_logger("app")
 # Global event for stopping processing
 stop_event = threading.Event()
 
+# Создаем класс для интеграции tqdm с Gradio
+class GradioTQDM:
+    def __init__(self, progress_component):
+        self.progress_component = progress_component
+        self.total = 100
+        self.n = 0
+        self.description = ""
+        
+    def reset(self, total=100, desc=""):
+        self.total = total
+        self.n = 0
+        self.description = desc
+        self.progress_component.update(value=0, maximum=total, description=desc)
+        
+    def update(self, n=1):
+        self.n += n
+        if self.n > self.total:
+            self.n = self.total
+        self.progress_component.update(value=self.n)
+        
+    def set_description(self, desc):
+        self.description = desc
+        self.progress_component.update(description=desc)
+    
+    def tqdm(self, iterable, desc=None, total=None):
+        if total is not None:
+            self.total = total
+        if desc is not None:
+            self.description = desc
+        
+        self.reset(total=self.total, desc=self.description)
+        
+        for item in iterable:
+            yield item
+            self.update(1)
+
 def process_standard_file(
     input_file,
     checkpoint_name="checkpoint.xlsx",
     save_interval=10,
-    progress=None
+    progress=gr.Progress()
 ):
     """
     Обработка стандартного файла Excel с колонкой 'Наименование'
     """
     logger.info(f"Starting process with standard file: {input_file.name}")
+    
+    # Сбрасываем флаг остановки при запуске новой обработки
+    stop_event.clear()
     
     # Обновляем статус
     yield None, "Запуск обработки..."
@@ -34,8 +75,14 @@ def process_standard_file(
     # Создание стандартного процессора
     processor = StandardProcessor(input_file, checkpoint_name, save_interval, progress)
     
+    # Передаем флаг остановки в процессор
+    processor.stop_event = stop_event
+    
     # Выполнение обработки и передача результата
     for result in processor.process():
+        if stop_event.is_set():
+            yield None, "Обработка остановлена пользователем."
+            return
         if result is None:
             yield None, "Ошибка обработки. Проверьте лог для подробностей."
         else:
@@ -46,18 +93,24 @@ def process_format_41_file(
     checkpoint_name="checkpoint.xlsx",
     save_interval=10,
     header_rows=5,
-    progress=None
+    progress=gr.Progress()
 ):
     """
     Обработка файла Excel в полном формате
     """
     logger.info(f"Starting process with Format 4_1 file: {input_file.name}")
     
+    # Сбрасываем флаг остановки при запуске новой обработки
+    stop_event.clear()
+    
     # Обновляем статус
     yield None, f"Запуск обработки файла в полном формате. Пропускаем {header_rows} строк заголовка..."
     
     # Создание процессора для полного формата
     processor = FullFormatProcessor(input_file, checkpoint_name, save_interval, progress)
+    
+    # Передаем флаг остановки в процессор
+    processor.stop_event = stop_event
     
     # Устанавливаем количество строк заголовка для пропуска
     processor.NUM_HEADER_ROWS = int(header_rows)
@@ -66,6 +119,9 @@ def process_format_41_file(
     # Выполнение обработки и передача результата с обновлением статуса
     step = 0
     for result in processor.process():
+        if stop_event.is_set():
+            yield None, "Обработка остановлена пользователем."
+            return
         step += 1
         if result is None:
             if step == 1:
@@ -79,11 +135,9 @@ def cancel_process():
     """
     Отмена обработки (общая функция для всех процессоров)
     """
-    # В новой архитектуре каждый процессор имеет свой флаг остановки,
-    # но мы можем использовать глобальную переменную, чтобы отменить все запущенные процессы
-    from processors.base_processor import BaseProcessor
+    # Устанавливаем флаг остановки
+    stop_event.set()
     
-    logger = logging.getLogger("app")
     logger.info("Stop requested by user")
     return "Обработка остановлена пользователем"
 
@@ -102,7 +156,37 @@ with gr.Blocks(
     
     # Добавляем отображение лога для удобства отладки
     with gr.Accordion("Журнал событий (лог)", open=False):
-        Log('processor.log', dark=True, xterm_font_size=14)
+        log_component = gr.Textbox(
+            label="Журнал обработки",
+            value="Загрузка логов...",
+            lines=20,
+            max_lines=50,
+            interactive=False,
+            autoscroll=True,
+            show_copy_button=True,
+            elem_id="log_textarea"
+        )
+        
+        # Функция обновления логов
+        def update_logs():
+            try:
+                with open('processor.log', 'r', encoding='utf-8') as f:
+                    # Получаем последние 50 строк лога
+                    lines = f.readlines()[-50:]
+                    return ''.join(lines)
+            except Exception as e:
+                return f"Ошибка чтения лога: {str(e)}"
+        
+        # Создаем таймер для автоматического обновления логов
+        refresh_interval = gr.Number(value=3, label="Интервал обновления (сек)", 
+                                    minimum=1, maximum=10, step=1, visible=False)
+        
+        # Используем interval компонент для автоматического обновления
+        log_updater = gr.Timer(3, update_logs, outputs=[log_component])
+        
+        # Кнопка для ручного обновления на случай необходимости
+        manual_refresh_btn = gr.Button("Обновить журнал вручную")
+        manual_refresh_btn.click(fn=update_logs, outputs=log_component)
 
     with gr.Tab("Стандартный формат"):
         gr.Markdown(f"<h2 style='{subheader_style}'>Обработка файла с колонкой 'Наименование'</h2>")
@@ -157,7 +241,7 @@ with gr.Blocks(
         
         # Отмена обработки
         std_stop_btn.click(
-            fn=stop_event.clear(),
+            fn=cancel_process,
             inputs=[],
             outputs=std_status
         )

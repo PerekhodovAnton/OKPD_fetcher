@@ -8,3 +8,4 @@ __pycache__
 *.jsonl.gz
 *.log
 .DS_Store
+*.ignore

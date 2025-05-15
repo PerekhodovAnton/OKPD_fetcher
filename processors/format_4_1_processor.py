@@ -129,18 +129,19 @@ class Format41Processor(BaseProcessor):
             
         try:
             # Открываем Excel файл
-            self.workbook = openpyxl.load_workbook(self.input_path)
+            if not self.workbook:
+                self.workbook = openpyxl.load_workbook(self.input_path)
             self.logger.info(f"Excel файл открыт: {self.input_path}")
             
-            # Определяем активный лист (или первый, если активный не задан)
-            if self.workbook.active:
+            # Определяем нужный лист на основе self.sheet_name
+            if self.sheet_name and self.sheet_name in self.workbook.sheetnames:
+                sheet = self.workbook[self.sheet_name]
+            else:
+                # Используем активный лист, если sheet_name не задан или не найден
                 sheet = self.workbook.active
                 self.sheet_name = sheet.title
-            else:
-                sheet = self.workbook.worksheets[0]
-                self.sheet_name = sheet.title
             
-            self.logger.info(f"Анализируем лист: {self.sheet_name}")
+            self.logger.info(f"Анализируем лист: {sheet.title}")
             
             # Ищем в первых нескольких строках заголовки колонок
             name_column = None
@@ -200,7 +201,7 @@ class Format41Processor(BaseProcessor):
                         return True
             
             # Не нашли нужные колонки
-            self.logger.error("Не удалось найти колонки 'Наименование' и 'Код ОКП/ОКПД2'")
+            self.logger.error(f"Не удалось найти колонки 'Наименование' и 'Код ОКП/ОКПД2' на листе {sheet.title}")
             return False
             
         except Exception as e:
@@ -225,20 +226,23 @@ class Format41Processor(BaseProcessor):
                 sheet_count = len(sheet_names)
                 self.logger.info(f"Файл содержит {sheet_count} листов: {', '.join(sheet_names)}")
                 
-                # Обрабатываем каждый лист по очереди
-                all_results = {}  # Общий словарь результатов
+                # Сохраняем workbook для дальнейшего использования
+                self.workbook = workbook
                 
+                # Новый подход: собираем все элементы со всех листов сначала
+                all_items = []  # Список всех элементов [{'text': '...', 'sheet': '...', 'row': N}]
+                all_unique_items = set()  # Множество уникальных текстов элементов
+                
+                # 1. Собираем элементы со всех листов
                 for sheet_idx, sheet_name in enumerate(sheet_names, start=1):
-                    self.logger.info(f"Обработка листа {sheet_idx}/{sheet_count}: '{sheet_name}'")
+                    self.logger.info(f"Сканирование листа {sheet_idx}/{sheet_count}: '{sheet_name}'")
                     
                     # Устанавливаем текущий лист
                     self.sheet_name = sheet_name
                     
                     # Очищаем предыдущие результаты
-                    self.workbook = None
                     self.name_column_index = None
                     self.code_column_index = None
-                    self.results_to_update = {}
                     
                     # Находим колонки в текущем листе
                     success = self._find_columns_in_excel()
@@ -251,26 +255,199 @@ class Format41Processor(BaseProcessor):
                         # Читаем данные из конкретного листа
                         self.df = pd.read_excel(self.input_path, sheet_name=sheet_name)
                         self.logger.info(f"Лист '{sheet_name}' прочитан для анализа, обнаружено {self.df.shape[0]} строк, {self.df.shape[1]} столбцов")
+                        
+                        # Собираем элементы с текущего листа
+                        sheet_items = self._collect_items_from_sheet()
+                        
+                        for item in sheet_items:
+                            all_items.append({
+                                'text': item[1],
+                                'sheet': sheet_name,
+                                'row': item[0]
+                            })
+                            all_unique_items.add(item[1])
+                            
+                        self.logger.info(f"Найдено {len(sheet_items)} элементов на листе '{sheet_name}'")
+                        
                     except Exception as e:
                         self.logger.warning(f"Ошибка при чтении листа '{sheet_name}': {e}")
                         continue
-                        
-                    # Продолжаем стандартную обработку для конкретного листа
-                    sheet_success = self._process_sheet()
-                    
-                    if sheet_success:
-                        # Добавляем результаты в общий словарь
-                        all_results[sheet_name] = self.results_to_update.copy()
-                        self.logger.info(f"Лист '{sheet_name}' успешно обработан, найдено {len(self.results_to_update)} элементов с кодами ОКПД")
-                        
-                        # Сохраняем результаты для текущего листа
-                        self._update_excel_with_codes()
-                    else:
-                        self.logger.warning(f"Обработка листа '{sheet_name}' не удалась")
                 
-                # Общие результаты
-                total_items = sum(len(results) for results in all_results.values())
-                self.logger.info(f"Всего обработано {len(all_results)} листов, {total_items} элементов получили коды ОКПД")
+                # Статистика собранных элементов
+                self.logger.info(f"Всего найдено {len(all_items)} элементов на всех листах")
+                self.logger.info(f"Уникальных элементов: {len(all_unique_items)}")
+                
+                if not all_unique_items:
+                    self.logger.warning("Не найдено элементов для обработки")
+                    return False
+                
+                # 2. Группируем похожие элементы
+                unique_texts = list(all_unique_items)
+                self.logger.info("Группируем похожие элементы...")
+                
+                # Инициализируем модель перед группировкой для экономии времени
+                if not self.init_model():
+                    self.logger.error("Ошибка инициализации модели")
+                    return False
+                
+                # Группировка похожих элементов
+                groups = group_similar(unique_texts)
+                self.logger.info(f"Сгруппировано в {len(groups)} групп")
+                
+                # 3. Обрабатываем каждую группу и получаем коды ОКПД
+                codes_by_item = {}  # Словарь {текст: код_ОКПД}
+                
+                # Безопасная работа с прогрессом
+                if self.progress is not None:
+                    self.progress(0, desc=f"Обработка групп...", total=len(groups))
+                    progress_iter = self.progress.tqdm(groups, desc=f"Получение кодов ОКПД")
+                else:
+                    progress_iter = groups
+                
+                for idx, group in enumerate(progress_iter, start=1):
+                    if self.stop_event.is_set():
+                        self.logger.info("Обработка остановлена пользователем")
+                        break
+                        
+                    if not group:
+                        continue
+                    
+                    # Берем представителя группы
+                    rep = group[0]
+                    
+                    # Дополнительная проверка перед обработкой
+                    # Проверяем снова чтобы не пропустить служебные строки
+                    is_service_line = False
+                    for i, pattern in enumerate(self.SKIP_PATTERNS_COMPILED):
+                        if pattern.search(rep):
+                            self.logger.warning(f"Пропускаем служебную строку (повторная проверка): '{rep}' (соответствует шаблону {i+1}: {self.SKIP_PATTERNS[i]})")
+                            is_service_line = True
+                            break
+                    
+                    if is_service_line:
+                        continue
+                    
+                    try:
+                        # Нормализуем термин
+                        normalized = normalize_term(rep)
+                        self.logger.info(f"Обработка группы {idx}/{len(groups)}: {normalized}")
+                        
+                        # Получаем упрощенный термин
+                        prompt = [{"role": "user", "content": normalized}]
+                        simplified = self.model.generate(prompt)['content']
+                        self.logger.info(f"Упрощено до: {simplified}")
+                        
+                        # Запрашиваем коды ОКПД
+                        okpd_data = fetch_okpd2_batch([simplified])
+                        entries = okpd_data.get(simplified, [])
+                        
+                        # Выбираем подходящий код
+                        code, name, comment = Processor._decide(None, entries, rep, simplified)
+                        self.logger.info(f"Выбран код: {code} - {name}")
+                        
+                        # Сохраняем код для каждого элемента в группе
+                        for item in group:
+                            codes_by_item[item] = code
+                            
+                    except Exception as e:
+                        self.logger.exception(f"Ошибка при обработке группы {idx}: {e}")
+                
+                # 4. Проставляем коды для всех вхождений элементов
+                self.logger.info(f"Определены коды ОКПД для {len(codes_by_item)} уникальных элементов")
+                
+                # Создаем словарь для всех обновлений {sheet_name: {row: code}}
+                updates_by_sheet = {}
+                
+                # Проходим по всем найденным элементам и составляем план обновлений
+                for item in all_items:
+                    item_text = item['text']
+                    sheet_name = item['sheet']
+                    row = item['row']
+                    
+                    if item_text in codes_by_item:
+                        code = codes_by_item[item_text]
+                        
+                        # Инициализируем словарь для листа, если его еще нет
+                        if sheet_name not in updates_by_sheet:
+                            updates_by_sheet[sheet_name] = {}
+                            
+                        # Добавляем обновление для данной строки
+                        updates_by_sheet[sheet_name][row] = {
+                            'code': code,
+                            'item': item_text
+                        }
+                
+                # 5. Применяем обновления для каждого листа
+                total_updated = 0
+                
+                for sheet_name, updates in updates_by_sheet.items():
+                    self.logger.info(f"Обновление листа '{sheet_name}': {len(updates)} элементов")
+                    
+                    # Переключаемся на нужный лист
+                    self.sheet_name = sheet_name
+                    
+                    # Явно получаем лист из рабочей книги
+                    if sheet_name in self.workbook.sheetnames:
+                        sheet = self.workbook[sheet_name]
+                    else:
+                        self.logger.warning(f"Лист '{sheet_name}' не найден в рабочей книге, пропускаем")
+                        continue
+                    
+                    # Перед обновлением листа, находим колонки заново
+                    success = self._find_columns_in_excel()
+                    if not success:
+                        self.logger.warning(f"Не удалось определить колонки на листе '{sheet_name}', пропускаем обновления")
+                        continue
+                    
+                    # Проверяем колонки перед обновлением
+                    if not self.name_column_index or not self.code_column_index:
+                        self.logger.warning(f"Не удалось определить колонки на листе '{sheet_name}', пропускаем")
+                        continue
+                    
+                    self.logger.info(f"Найдены колонки на листе '{sheet_name}': наименование({self.name_column_index}), код({self.code_column_index})")
+                    
+                    # Обновляем каждую ячейку
+                    sheet_updated = 0
+                    for row, data in updates.items():
+                        try:
+                            # Ячейка с кодом - добавляем +2 к индексу строки (+1 для нумерации Excel с 1, +1 для коррекции смещения)
+                            code_cell = sheet.cell(row=int(row)+2, column=self.code_column_index)
+                            old_value = code_cell.value
+                            
+                            # Для отладки: проверяем содержимое ячейки с наименованием
+                            name_cell = sheet.cell(row=int(row)+2, column=self.name_column_index)
+                            name_value = name_cell.value
+                            if name_value != data['item']:
+                                self.logger.info(f"Ожидаемый текст '{data['item']}', фактический '{name_value}' в строке {int(row)+2}")
+                            
+                            # Проверяем, содержит ли ячейка формулу
+                            if old_value and isinstance(old_value, str) and old_value.startswith('='):
+                                self.logger.warning(f"Ячейка ({sheet_name}:{row+2}, {self.code_column_index}) содержит формулу, пропускаем: {old_value}")
+                                continue
+                            
+                            # Обновляем значение
+                            code_cell.value = data['code']
+                            total_updated += 1
+                            sheet_updated += 1
+                            
+                            if total_updated % 100 == 0:
+                                self.logger.info(f"Обновлено {total_updated} ячеек...")
+                                
+                            if sheet_updated <= 5:  # Логируем первые 5 обновлений для каждого листа
+                                self.logger.info(f"Обновлена ячейка {sheet_name}:({int(row)+2}, {self.code_column_index}): '{old_value}' -> '{data['code']}' для '{name_value}'")
+                                
+                        except Exception as e:
+                            self.logger.warning(f"Ошибка при обновлении ячейки на листе '{sheet_name}', строка {row+2}: {e}")
+                    
+                    self.logger.info(f"Обновлено {sheet_updated} ячеек на листе '{sheet_name}'")
+                
+                # 6. Сохраняем результаты
+                try:
+                    self.workbook.save(self.input_path)
+                    self.logger.info(f"Файл успешно обновлен, проставлено {total_updated} кодов ОКПД")
+                except Exception as e:
+                    self.logger.error(f"Ошибка при сохранении файла: {e}")
+                    return False
                 
                 # Копируем исходный файл в output_path для интерфейса
                 try:
@@ -279,7 +456,7 @@ class Format41Processor(BaseProcessor):
                 except Exception as e:
                     self.logger.warning(f"Не удалось создать копию результата: {e}")
                 
-                return True if all_results else False
+                return True
                 
             except Exception as e:
                 self.logger.exception(f"Ошибка при обработке листов Excel: {e}")
@@ -288,256 +465,110 @@ class Format41Processor(BaseProcessor):
         except Exception as e:
             self.logger.exception(f"Ошибка в Format41Processor: {e}")
             return False
-    
-    def _process_sheet(self):
-        """Обработка отдельного листа формата 4_1"""
+            
+    def _collect_items_from_sheet(self):
+        """
+        Собирает элементы с текущего листа, пропуская служебные строки
+        
+        Returns:
+            list: Список кортежей (индекс_строки, текст_элемента)
+        """
+        items_collected = []
+        
+        # Счетчики для анализа пропущенных строк
+        headers_skipped = 0
+        empty_skipped = 0
+        patterns_skipped = 0
+        total_rows = 0
+        
+        # Проверяем, определены ли колонки
+        if self.name_column_index is None:
+            self.logger.error(f"Не определен индекс колонки с наименованиями для листа {self.sheet_name}")
+            return []
+        
+        # Определяем имя колонки с наименованиями
         try:
-            if self.df is None or self.name_column_index is None:
-                self.logger.error("Не удалось инициализировать данные для обработки листа")
-                return False
-                
-            # Определяем имена колонок
-            if self.name_column_index is not None:
+            if 'Наименование' in self.df.columns:
+                item_column_name = 'Наименование'
+            elif self.name_column_index and self.name_column_index - 1 < len(self.df.columns):
                 # Преобразуем индекс колонки openpyxl (с 1) в индекс pandas (с 0)
-                pandas_name_col = self.name_column_index - 1
-                pandas_code_col = self.code_column_index - 1 if self.code_column_index else None
-                
-                # Получаем имя колонки, если заголовки есть
-                if 'Наименование' in self.df.columns:
-                    item_column_name = 'Наименование'
-                elif pandas_name_col < len(self.df.columns):
-                    item_column_name = self.df.columns[pandas_name_col]
-                else:
-                    # Используем индекс, если имя недоступно
-                    item_column_name = pandas_name_col
-                
-                # Аналогично для колонки кода
-                if 'Код ОКП/ОКПД2' in self.df.columns:
-                    code_column_name = 'Код ОКП/ОКПД2'
-                elif 'Код ОКПД2' in self.df.columns:
-                    code_column_name = 'Код ОКПД2'
-                elif pandas_code_col is not None and pandas_code_col < len(self.df.columns):
-                    code_column_name = self.df.columns[pandas_code_col]
-                else:
-                    # Используем индекс, если имя недоступно
-                    code_column_name = pandas_code_col
-                
-                self.logger.info(f"Используем колонки: '{item_column_name}' для наименований и '{code_column_name}' для кодов")
+                item_column_name = self.df.columns[self.name_column_index - 1]
             else:
-                # Если не нашли колонки через openpyxl, пробуем найти через pandas
-                if 'Наименование' in self.df.columns:
-                    item_column_name = 'Наименование'
-                    self.logger.info("Найдена колонка 'Наименование'")
-                else:
-                    # Пробуем искать по содержимому
-                    for col in self.df.columns:
-                        col_values = self.df[col].astype(str).str.lower()
-                        if col_values.str.contains('наименование').any():
-                            item_column_name = col
-                            self.logger.info(f"Найдена колонка с наименованиями: {col}")
-                            break
-                    else:
-                        self.logger.error("Не удалось найти колонку с наименованиями")
-                        return False
-                
-                # Ищем колонку с кодом ОКПД2
-                if 'Код ОКП/ОКПД2' in self.df.columns:
-                    code_column_name = 'Код ОКП/ОКПД2'
-                    self.logger.info("Найдена колонка 'Код ОКП/ОКПД2'")
-                elif 'Код ОКПД2' in self.df.columns:
-                    code_column_name = 'Код ОКПД2'
-                    self.logger.info("Найдена колонка 'Код ОКПД2'")
-                else:
-                    # Пробуем искать по содержимому
-                    for col in self.df.columns:
-                        col_name = str(col).lower()
-                        if 'код' in col_name and ('окп' in col_name or 'окпд' in col_name):
-                            code_column_name = col
-                            self.logger.info(f"Найдена колонка с кодами ОКПД: {col}")
-                            break
-                    else:
-                        # Создаем новую колонку
-                        self.logger.info("Колонка с кодом не найдена, используем индекс колонки из openpyxl")
-                        if self.code_column_index:
-                            code_column_name = self.code_column_index - 1  # преобразуем в индекс pandas
-                        else:
-                            code_column_name = len(self.df.columns)  # крайний случай - новая колонка в конце
-                            self.df[code_column_name] = ''
-            
-            self.logger.info(f"Определены колонки: {item_column_name} (наименования) и {code_column_name} (коды)")
-            
-            # Собираем все наименования, кроме служебных строк
-            items_to_process = []
-            
-            # Счетчики для анализа пропущенных строк
-            headers_skipped = 0
-            empty_skipped = 0
-            patterns_skipped = 0
-            total_rows = 0
-            
-            # Проходим по всем строкам, пропуская указанное количество строк заголовка
-            for idx, row in enumerate(self.df.iterrows()):
-                idx, row = row  # Распаковываем кортеж (индекс, Series)
-                total_rows += 1
-                
-                # Пропускаем первые N строк (заголовки таблицы)
-                if idx < self._num_header_rows:
-                    headers_skipped += 1
-                    self.logger.debug(f"Пропускаем строку {idx} (часть заголовка)")
-                    continue
-                
-                # Пропускаем пустые ячейки
-                if pd.isna(row[item_column_name]):
-                    empty_skipped += 1
-                    continue
-                    
-                item_text = str(row[item_column_name]).strip()
-                
-                # Пропускаем пустые строки и одиночные символы
-                if not item_text or len(item_text) <= 1:
-                    empty_skipped += 1
-                    continue
-                    
-                # Пропускаем, если это число или короткое число
-                if item_text.isdigit() and len(item_text) <= 3:
-                    empty_skipped += 1
-                    continue
-                
-                # Проверяем по шаблонам служебных строк
-                skip_item = False
-                for i, pattern in enumerate(self.SKIP_PATTERNS_COMPILED):
-                    if pattern.search(item_text):
-                        skip_item = True
-                        patterns_skipped += 1
-                        self.logger.info(f"Пропускаем служебную строку [{idx}]: '{item_text}' (соответствует шаблону {i+1}: {self.SKIP_PATTERNS[i]})")
+                # Попробуем найти колонку по ключевым словам
+                for col in self.df.columns:
+                    if 'наименов' in str(col).lower():
+                        item_column_name = col
+                        self.logger.info(f"Найдена колонка c наименованиями по ключевому слову: {col}")
                         break
-                        
-                if skip_item:
-                    continue
-                    
-                # Добавляем элемент для обработки
-                items_to_process.append((idx, item_text))
+                else:
+                    self.logger.error(f"Не удалось определить колонку с наименованиями на листе {self.sheet_name}")
+                    return []
+        except Exception as e:
+            self.logger.error(f"Ошибка при определении колонки с наименованиями: {e}")
+            return []
             
-            # Обновляем счетчики для логирования
-            self.skipped_rows = headers_skipped + empty_skipped
-            self.skipped_service_rows = patterns_skipped
+        self.logger.info(f"Используем колонку '{item_column_name}' для наименований на листе {self.sheet_name}")
             
-            self.logger.info(f"Всего строк в листе: {total_rows}")
-            self.logger.info(f"Пропущено строк заголовка: {headers_skipped}")
-            self.logger.info(f"Пропущено пустых строк: {empty_skipped}")
-            self.logger.info(f"Пропущено служебных строк: {patterns_skipped}")
+        # Проходим по всем строкам, пропуская указанное количество строк заголовка
+        for idx, row in enumerate(self.df.iterrows()):
+            idx, row = row  # Распаковываем кортеж (индекс, Series)
+            total_rows += 1
+            
+            # Пропускаем первые N строк (заголовки таблицы)
+            if idx < self._num_header_rows:
+                headers_skipped += 1
+                self.logger.debug(f"Пропускаем строку {idx} (часть заголовка)")
+                continue
+            
+            # Проверяем наличие колонки в row
+            if item_column_name not in row:
+                self.logger.warning(f"Колонка '{item_column_name}' отсутствует в строке {idx}")
+                empty_skipped += 1
+                continue
                 
-            if not items_to_process:
-                self.logger.warning("Не найдено элементов для обработки на листе")
-                return False
+            # Пропускаем пустые ячейки
+            if pd.isna(row[item_column_name]):
+                empty_skipped += 1
+                continue
                 
-            self.logger.info(f"Найдено {len(items_to_process)} элементов для обработки")
+            item_text = str(row[item_column_name]).strip()
             
-            # Инициализируем модель перед группировкой для экономии времени
-            if not self.init_model():
-                self.logger.error("Ошибка инициализации модели")
-                return False
+            # Пропускаем пустые строки и одиночные символы
+            if not item_text or len(item_text) <= 1:
+                empty_skipped += 1
+                continue
                 
-            # Группируем похожие элементы
-            self.logger.info("Группируем похожие элементы...")
-            item_texts = [item[1] for item in items_to_process]
-            groups = group_similar(item_texts)
+            # Пропускаем, если это число или короткое число
+            if item_text.isdigit() and len(item_text) <= 3:
+                empty_skipped += 1
+                continue
             
-            # Создаем отображение текста на индекс строки
-            item_to_idx = {items_to_process[i][1]: items_to_process[i][0] for i in range(len(items_to_process))}
-            
-            # Обработка каждой группы
-            total_groups = len(groups)
-            self.logger.info(f"Сгруппировано в {total_groups} групп")
-            
-            # Безопасная работа с прогрессом
-            if self.progress is not None:
-                self.progress(0, desc=f"Обработка листа {self.sheet_name}...", total=total_groups)
-                progress_iter = self.progress.tqdm(groups, desc=f"Обработка групп в {self.sheet_name}")
-            else:
-                progress_iter = groups
-                
-            processed_groups = 0
-            processed_items = 0
-            success_items = 0
-            error_items = 0
-            
-            # Дополнительная проверка даже после группировки элементов
-            for idx, group in enumerate(progress_iter, start=1):
-                if self.stop_event.is_set():
-                    self.logger.info("Обработка остановлена пользователем")
+            # Проверяем по шаблонам служебных строк
+            skip_item = False
+            for i, pattern in enumerate(self.SKIP_PATTERNS_COMPILED):
+                if pattern.search(item_text):
+                    skip_item = True
+                    patterns_skipped += 1
+                    self.logger.info(f"Пропускаем служебную строку [{idx}]: '{item_text}' (соответствует шаблону {i+1}: {self.SKIP_PATTERNS[i]})")
                     break
                     
-                if not group:
-                    continue
-                    
-                processed_groups += 1
+            if skip_item:
+                continue
                 
-                # Берем представителя группы
-                rep = group[0]
-                
-                # Дополнительная проверка перед обработкой
-                # Проверяем снова чтобы не пропустить служебные строки
-                is_service_line = False
-                for i, pattern in enumerate(self.SKIP_PATTERNS_COMPILED):
-                    if pattern.search(rep):
-                        self.logger.warning(f"Пропускаем служебную строку (повторная проверка): '{rep}' (соответствует шаблону {i+1}: {self.SKIP_PATTERNS[i]})")
-                        is_service_line = True
-                        break
-                
-                if is_service_line:
-                    continue
-                
-                try:
-                    # Нормализуем термин
-                    normalized = normalize_term(rep)
-                    self.logger.info(f"Обработка группы {idx}/{total_groups}: {normalized}")
-                    
-                    # Получаем упрощенный термин
-                    prompt = [{"role": "user", "content": normalized}]
-                    simplified = self.model.generate(prompt)['content']
-                    self.logger.info(f"Упрощено до: {simplified}")
-                    
-                    # Запрашиваем коды ОКПД
-                    okpd_data = fetch_okpd2_batch([simplified])
-                    entries = okpd_data.get(simplified, [])
-                    
-                    # Выбираем подходящий код
-                    code, name, comment = Processor._decide(None, entries, rep, simplified)
-                    self.logger.info(f"Выбран код: {code} - {name}")
-                    
-                    # Сохраняем коды для каждого элемента в группе
-                    for item in group:
-                        processed_items += 1
-                        if item in item_to_idx:
-                            row_idx = item_to_idx[item]
-                            # Сохраняем результат в словаре для последующего обновления Excel
-                            self.results_to_update[row_idx] = {
-                                'code': code,
-                                'column_name': code_column_name,
-                                'item': item
-                            }
-                            success_items += 1
-                            
-                    # Сохраняем промежуточный результат
-                    if idx % int(self.save_interval) == 0:
-                        self._update_excel_with_codes()
-                        self.logger.info(f"Сохранен промежуточный результат для листа {self.sheet_name} после {idx}/{total_groups} групп ({processed_items} элементов)")
-                        
-                except Exception as e:
-                    self.logger.exception(f"Ошибка при обработке группы {idx}: {e}")
-                    error_items += len(group)
-            
-            # Обновляем счетчики для финального отчета
-            self.processed_items = processed_items
-            
-            self.logger.info(f"Обработка листа '{self.sheet_name}' завершена: обработано {processed_groups}/{total_groups} групп, {success_items} элементов успешно, {error_items} с ошибками")
-            
-            return True
-            
-        except Exception as e:
-            self.logger.exception(f"Ошибка при обработке листа '{self.sheet_name}': {e}")
-            return False
+            # Добавляем элемент в список
+            items_collected.append((idx, item_text))
+        
+        # Обновляем счетчики для логирования
+        self.skipped_rows = headers_skipped + empty_skipped
+        self.skipped_service_rows = patterns_skipped
+        
+        self.logger.info(f"Всего строк на листе: {total_rows}")
+        self.logger.info(f"Пропущено строк заголовка: {headers_skipped}")
+        self.logger.info(f"Пропущено пустых строк: {empty_skipped}")
+        self.logger.info(f"Пропущено служебных строк: {patterns_skipped}")
+        self.logger.info(f"Собрано элементов: {len(items_collected)}")
+        
+        return items_collected
     
     def _update_excel_with_codes(self):
         """
@@ -559,14 +590,12 @@ class Format41Processor(BaseProcessor):
             if not self.workbook:
                 self.workbook = openpyxl.load_workbook(self.input_path)
                 
-            # Используем активный лист или первый лист
-            if self.sheet_name:
-                if self.sheet_name in self.workbook.sheetnames:
-                    sheet = self.workbook[self.sheet_name]
-                else:
-                    sheet = self.workbook.active
+            # Используем указанный лист, активный лист или первый лист
+            if self.sheet_name and self.sheet_name in self.workbook.sheetnames:
+                sheet = self.workbook[self.sheet_name]
             else:
                 sheet = self.workbook.active
+                self.sheet_name = sheet.title
                 
             self.logger.info(f"Обновление данных в листе '{sheet.title}'")
             

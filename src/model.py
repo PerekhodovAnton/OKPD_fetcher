@@ -101,8 +101,8 @@ torch.set_num_threads(1)
 class Model:
     def __init__(
         self,
-        model_name: str = "Qwen/Qwen3-0.6B",
-        # model_name: str = "Qwen/Qwen3-1.7B",
+        # model_name: str = "Qwen/Qwen3-0.6B",
+        model_name: str = "Qwen/Qwen3-1.7B",
         device: str = "cpu",
         temperature: float = 0.1,
         top_p: float = 0.9,
